@@ -377,8 +377,3 @@
   background: transparent url(video-bg.jpg) no-repeat;
   background-size: cover;
 }
-video {
-  display: block;
-}
-.body__bg-video {
-}
