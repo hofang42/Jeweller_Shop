@@ -328,6 +328,9 @@
 
 
 /* Footer */
+.footer{
+  padding: 0px 50px 20px 50px;
+}
 .footer_head {
   margin-top: 500px;
   display: flex;
@@ -335,45 +338,88 @@
   align-items: center;
   height: 80px;
   background-color: #f0ede8;
+  margin-right: -50px;
+  margin-left: -50px;
 }
 
-.subcribe {
+.footer_head_subcribe {
   display: flex;
   align-items: center;
   font-family: raleway;
   font-weight: 700;
-  font-size: 15px;
-  margin-right: 70px;
+  font-size: 13px;
+  margin-right: 200px;
 }
 
-.sub_text{
+.subcribe_text{
   padding-right: 15px;
 }
 
-.sub_box{
+.subcribe_box{
   background-color: transparent;
   border-width: 1px;
   padding: 10px;
   width: 230px;
 }
 
-.follow {
+.footer_head_follow {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: raleway;
   font-size: 12px;
-  margin-left: 70px;
+  margin-left: 200px;
+  color: black;
 }
 
 .follow_text{
-  margin-right: 50px;
+  margin-right: 40px;
 }
 
-.follow img{
+.footer_head_follow i{
   margin-right: 30px;
-  width: 30px;
-  height: 30px;
+  font-size: 25px;
 }
 
+.footer_body{
+  margin-top: 20px;
+  font-family: raleway;
+  font-size: 15px;
+}
 
+.footer_body ul li{
+  list-style: none;
+  text-decoration: none;
+  line-height: 2;
+  font-weight: 500;
+}
+
+.footer_body p{
+  font-weight: bolder;
+  line-height: 2;
+}
+
+.footer_end{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid black;
+  margin: 30px 40px 0px 40px;
+  padding-top: 20px;
+  font-size: 15px;
+}
+
+.footer_end_right_sec{
+  display: flex;
+  margin-right: 30px;
+  gap: 30px;
+  font-size: 15px;
+}
+
+.footer_end_right_sec button{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/*End footer*/
