@@ -437,6 +437,8 @@
 .footer_head_follow i{
   margin-right: 30px;
   font-size: 25px;
+  color: black;
+  cursor: pointer;
 }
 
 .footer_body{
