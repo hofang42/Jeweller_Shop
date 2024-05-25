@@ -368,7 +368,10 @@
   margin-top: 20px;
   padding: 14px 70px;
 }
-
+.body__bg-content a:hover {
+  text-decoration: none;
+  color: var(--black-color);
+}
 .body__bg-video {
   display: flex;
   align-items: center;
