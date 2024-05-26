@@ -31,12 +31,12 @@
   <body>
     <!-- Header -->
     <div class="app">
-      <header class="header">
+      <header class="">
         <div class="grid">
           <nav class="header__navbar">
             <!-- <img src="./assets/images/logo.png" alt="Logo" /> -->
 
-            <ul class="header__navbar-list">
+            <ul class="header__navbar-list header__navbar-list--right">
               <li class="header__navbar-item header__navbar-item--seperate">
                 <i class="header__navbar-icon fa-solid fa-bell-concierge"></i>
                 Services
@@ -65,7 +65,7 @@
               </li>
             </ul>
 
-            <ul class="header__navbar-list">
+            <ul class="header__navbar-list header__navbar-list--left">
               <!-- <li
                 class="header__navbar-item header__navbar-item--strong header__navbar-item--seperate"
               >
@@ -162,23 +162,51 @@
       <!-- Start Body -->
       <div class="contrainer">
         <div class="body">
-          <div class="body__bg-video">
-            <video
-              autoplay
-              loop
-              muted
-              plays-inline
-              disablePictureInPicture
-              class="body__bg-bgvideo"
-              type="video/mp4"
-              controlsList="nodownload"
-            >
-              <source src="./assets/images/bg-video.mp4" />
-            </video>
+          <div class="body__section-bigimm">
+            <div class="body__bg-video">
+              <video
+                autoplay
+                loop
+                muted
+                plays-inline
+                disablePictureInPicture
+                class="body__bg-bgvideo"
+                type="video/mp4"
+                controlsList="nodownload"
+              >
+                <source src="./assets/images/bg-video.mp4" />
+              </video>
+            </div>
+            <div class="body__bg-content">
+              <h1>RLOYAL</h1>
+              <a href="#">Explore now</a>
+            </div>
           </div>
-          <div class="body__bg-content">
-            <h1>RLOYAL</h1>
-            <a href="#">Explore now</a>
+          <div class="body__sub-collection-image row">
+            <div class="body__collection-part col-md-6 no-padding">
+              <div class="body__collection-part--img">
+                <img
+                  src="./assets/images/collection-body1.jpg"
+                  alt="Collection 1"
+                />
+              </div>
+              <div class="body__collection-part--info">
+                <h2>Collection 1</h2>
+                <p>New Collection from the future</p>
+              </div>
+            </div>
+            <div class="body__collection-part col-md-6 no-padding">
+              <div class="body__collection-part--img">
+                <img
+                  src="./assets/images/collection-body2.jpg"
+                  alt=" Collection 2"
+                />
+              </div>
+              <div class="body__collection-part--info">
+                <h2>Collection 2</h2>
+                <p>New Collection from the future</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -435,6 +463,15 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!--END FOOTER-->
   </body>
 </html>

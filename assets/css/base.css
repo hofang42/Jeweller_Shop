@@ -13,6 +13,7 @@
 }
 * {
   box-sizing: inherit;
+  padding: 0;
 }
 /* Animation */
 
@@ -24,6 +25,9 @@ html {
   box-sizing: border-box;
 }
 
+.no-padding {
+  padding: 0 !important;
+}
 .grid {
   width: 1694px;
   max-width: 100%;
