@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@300;400;500;700;900&family=Sedan+SC&display=swap");
 
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
 header {
   height: var(--header-height);
   /* background-image: linear-gradient(0, #f6d87b, #ebc060); */
@@ -451,8 +458,51 @@ header.sticky {
   font-size: 25px;
   transform: 0.6s;
 }
+
+/* Quote */
+.body__quote {
+  /* display: flex; */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 10rem 10rem;
+  display: block;
+}
+.body__quote-container {
+  display: flex;
+  justify-content: center;
+}
+.body__quote-para {
+  font-size: 3rem;
+  font-family: "Sedan SC", serif;
+  font-weight: 500;
+  align-items: center;
+  margin: 0;
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.body__quote-img {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 30px;
+  width: 150px;
+  height: 50px;
+  overflow: hidden;
+  margin: 0 20px;
+}
+.body__quote-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 /* Footer */
-.footer {
+footer {
   padding: 0px 50px 20px 50px;
 }
 .footer_head {
