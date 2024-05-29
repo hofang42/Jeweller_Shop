@@ -31,17 +31,16 @@
   <body>
     <!-- Header -->
     <div class="app">
-      <header class="" id="header">
+      <header class="">
         <div class="grid">
-          <!-- Hamburger menu icon for smaller screens -->
-
           <nav class="header__navbar">
+            <!-- Hamburger menu icon for smaller screens -->
+            <i
+              class="header__navbar-icon fa-solid fa-bars header__navbar-item--toggle"
+              onclick="toggleMenu()"
+            ></i>
+            <!-- Navbar lists container -->
             <div class="header__navbar-container">
-              <i
-                class="header__navbar-icon fa-solid fa-bars header__navbar-item--toggle"
-                style="display: none"
-                onclick="toggleMenu()"
-              ></i>
               <ul class="header__navbar-list header__navbar-list--right">
                 <li
                   class="header__navbar-item header__navbar-item--seperate header__navbar-item-responsive"
@@ -50,7 +49,7 @@
                   Services
                 </li>
                 <li class="header__navbar-item header__navbar-item-responsive">
-                  <span class="header__navbar-title--no-pointer" -
+                  <span class="header__navbar-title--no-pointer"
                     >Connect us</span
                   >
                   <a
@@ -74,31 +73,14 @@
                   />
                 </li>
               </ul>
-
               <ul class="header__navbar-list header__navbar-list--left">
-                <!-- <li
-                class="header__navbar-item header__navbar-item--strong header__navbar-item--seperate"
-              >
-                <i class="header__navbar-icon fa-solid fa-user"></i>
-                <a href="./login.html" class="header__navbar-item-link"
-                  >Sign in</a
-                >
-              </li>
-              <li
-                class="header__navbar-item header__navbar-item--strong header__navbar-item--seperate"
-              >
-                <i class="header__navbar-icon fa-regular fa-user"></i>
-                <a href="./register.html" class="header__navbar-item-link"
-                  >Sign up</a
-                >
-              </li> -->
                 <li class="header__navbar-item header__navbar-user">
                   <img
                     src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-1/356897934_777936193800003_6546687517946988960_n.jpg?stp=dst-jpg_p100x100&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFY2tcIFAsxFwb3EW_JgdyukEEFnMPttrqQQQWcw-22usKY3UkBKkmXR3bD_fQXKp7Y0cXi1VtVydDVeWI3CCsZ&_nc_ohc=mLV6n1XXQpwQ7kNvgFaqkKf&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fdad1-3.fna&oh=00_AYA4-CRiHQmRgmNXdcgSKC87LKIuMnaR30VX-4EsawbNxQ&oe=6655EFAD"
                     alt="Avt"
                     class="header__navbar-user-img"
                   />
-                  <span class="header__navbar-user-name">Khanh Pham </span>
+                  <span class="header__navbar-user-name">Khanh Pham</span>
                   <ul class="header__navbar-user-menu">
                     <li class="header__navbar-user-item">
                       <a href="">My Account</a>
@@ -150,47 +132,19 @@
                 </li>
                 <li class="header__dropdown-item">
                   JEWELLERY
-                  <div class="header__dropdown--info">
-                    <div class="header__downdown--category">
-                      <h4>BY CATAGORY</h4>
-                    </div>
-                    <div class="header__downdown--collection">
-                      <h4>BY COLLECTION</h4>
-                    </div>
-                  </div>
+                  <div class="header__dropdown--info">AAAAAA</div>
                 </li>
                 <li class="header__dropdown-item">
                   ENGAGEMENT & WEDDING
-                  <div class="header__dropdown--info">
-                    <div class="header__downdown--category">
-                      <h4>BY CATAGORY</h4>
-                    </div>
-                    <div class="header__downdown--collection">
-                      <h4>BY COLLECTION</h4>
-                    </div>
-                  </div>
+                  <div class="header__dropdown--info">AAAAAA</div>
                 </li>
                 <li class="header__dropdown-item">
                   WATCHES
-                  <div class="header__dropdown--info">
-                    <div class="header__downdown--category">
-                      <h4>BY CATAGORY</h4>
-                    </div>
-                    <div class="header__downdown--collection">
-                      <h4>BY COLLECTION</h4>
-                    </div>
-                  </div>
+                  <div class="header__dropdown--info">AAAAAA</div>
                 </li>
                 <li class="header__dropdown-item">
                   BAGS & ACCESSORIES
-                  <div class="header__dropdown--info">
-                    <div class="header__downdown--category">
-                      <h4>BY CATAGORY</h4>
-                    </div>
-                    <div class="header__downdown--collection">
-                      <h4>BY COLLECTION</h4>
-                    </div>
-                  </div>
+                  <div class="header__dropdown--info">AAAAAA</div>
                 </li>
               </ul>
             </div>
@@ -201,29 +155,28 @@
       <!-- Start Body -->
       <div class="contrainer">
         <div class="body">
-          <div class="body__bg-content">
-            <div class="body__bg-video">
-              <video
-                autoplay
-                loop
-                muted
-                plays-inline
-                disablePictureInPicture
-                class="body__bg-bgvideo"
-                type="video/mp4"
-                controlsList="nodownload"
-              >
-                <source src="./assets/images/bg-video.mp4" />
-              </video>
-            </div>
-            <div class="body__bg-content-text">
-              <div>
-                <h1>RLOYAL</h1>
-                <a href="#">Explore now</a>
+          <div class="body__section-bigimm">
+            <div class="body__bg-video row">
+              <div class="col-md-12 col-sm-12">
+                <video
+                  autoplay
+                  loop
+                  muted
+                  plays-inline
+                  disablePictureInPicture
+                  class="body__bg-bgvideo"
+                  type="video/mp4"
+                  controlsList="nodownload"
+                >
+                  <source src="./assets/images/bg-video.mp4" />
+                </video>
               </div>
             </div>
+            <div class="body__bg-content">
+              <h1>RLOYAL</h1>
+              <a href="#">Explore now</a>
+            </div>
           </div>
-          <div class="spacer small"></div>
           <div class="body__sub-collection-image row">
             <div class="body__collection-part col-md-6 col-sm-6 no-padding">
               <div class="body__collection-part--img">
