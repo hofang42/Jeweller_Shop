@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>RLoyal</title>
 
     <link rel="stylesheet" href="./assets/css/normalize.css" />
     <link rel="stylesheet" href="./assets/css/base.css" />
@@ -37,11 +37,6 @@
 
           <nav class="header__navbar">
             <div class="header__navbar-container">
-              <i
-                class="header__navbar-icon fa-solid fa-bars header__navbar-item--toggle"
-                style="display: none"
-                onclick="toggleMenu()"
-              ></i>
               <ul class="header__navbar-list header__navbar-list--right">
                 <li
                   class="header__navbar-item header__navbar-item--seperate header__navbar-item-responsive"
@@ -134,67 +129,169 @@
               /></a>
             </div>
           </div>
-          <div class="header-with-dropdown">
-            <div class="header__dropdown-list">
-              <ul class="header__dropdown-list--list">
-                <li class="header__dropdown-item">
-                  HIGH JEWELLERY
-                  <div class="header__dropdown--info">
-                    <div class="header__downdown--category">
-                      <h4>BY CATAGORY</h4>
-                    </div>
-                    <div class="header__downdown--collection">
-                      <h4>BY COLLECTION</h4>
-                    </div>
+          <nav class="header__navbar">
+            <div class="header-with-dropdown">
+              <div class="header__dropdown-list">
+                <ul class="sidebar">
+                  <li onclick="hideSidebar()">
+                    <a href="#"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#000"
+                      >
+                        <path
+                          d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                        /></svg
+                    ></a>
+                  </li>
+                  <li class="header__dropdown-item">HIGH JEWELLERY</li>
+                  <li class="header__dropdown-item">JEWELLERY</li>
+                  <li class="header__dropdown-item">ENGAGEMENT & WEDDING</li>
+                  <li class="header__dropdown-item">WATCHES</li>
+                  <li class="header__dropdown-item">BAGS & ACCESSORIES</li>
+                  <!-- USER NAVBAR -->
+                  <div class="navbar__for-user">
+                    <li class="header__navbar-item">
+                      <i class="header__navbar-icon fa-solid fa-user"></i>
+                      <a href="./login.html" class="header__navbar-item-link"
+                        >My Account</a
+                      >
+                    </li>
+                    <li class="header__navbar-item">
+                      <i class="header__navbar-icon fa-regular fa-heart"></i>
+                      <a href="#" class="header__navbar-item-link"
+                        >My Wishlist</a
+                      >
+                    </li>
+                    <li class="header__navbar-item">
+                      <i
+                        class="header__navbar-icon fa-solid fa-bell-concierge"
+                      ></i>
+                      <a href="#" class="header__navbar-item-link">Services</a>
+                    </li>
+                    <li class="header__navbar-item">
+                      <i
+                        class="header__navbar-icon fa-solid fa-address-book"
+                      ></i>
+                      <a href="#" class="header__navbar-item-link">Contact</a>
+                    </li>
                   </div>
-                </li>
-                <li class="header__dropdown-item">
-                  JEWELLERY
-                  <div class="header__dropdown--info">
-                    <div class="header__downdown--category">
-                      <h4>BY CATAGORY</h4>
-                    </div>
-                    <div class="header__downdown--collection">
-                      <h4>BY COLLECTION</h4>
-                    </div>
-                  </div>
-                </li>
-                <li class="header__dropdown-item">
-                  ENGAGEMENT & WEDDING
-                  <div class="header__dropdown--info">
-                    <div class="header__downdown--category">
-                      <h4>BY CATAGORY</h4>
-                    </div>
-                    <div class="header__downdown--collection">
-                      <h4>BY COLLECTION</h4>
-                    </div>
-                  </div>
-                </li>
-                <li class="header__dropdown-item">
-                  WATCHES
-                  <div class="header__dropdown--info">
-                    <div class="header__downdown--category">
-                      <h4>BY CATAGORY</h4>
-                    </div>
-                    <div class="header__downdown--collection">
-                      <h4>BY COLLECTION</h4>
-                    </div>
-                  </div>
-                </li>
-                <li class="header__dropdown-item">
-                  BAGS & ACCESSORIES
-                  <div class="header__dropdown--info">
-                    <div class="header__downdown--category">
-                      <h4>BY CATAGORY</h4>
-                    </div>
-                    <div class="header__downdown--collection">
-                      <h4>BY COLLECTION</h4>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+                </ul>
+              </div>
             </div>
-          </div>
+          </nav>
+          <nav class="header__navbar">
+            <div class="header-with-dropdown">
+              <div class="header__dropdown-list">
+                <ul class="header__dropdown-list--list">
+                  <div class="navbar__mobile-right">
+                    <li class="menu-button" onclick="showSidebar()">
+                      <a href="#"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="31px"
+                          viewBox="0 -960 960 960"
+                          width="31px"
+                          fill="#000"
+                        >
+                          <path
+                            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                          /></svg
+                      ></a>
+                    </li>
+                    <div class="header__navbar-search-onmobile">
+                      <i
+                        class="header__navbar-icon fa-solid fa-magnifying-glass"
+                      ></i>
+                    </div>
+                  </div>
+
+                  <li class="header__dropdown-item hideOnMobile">
+                    HIGH JEWELLERY
+                    <div class="header__dropdown--info">
+                      <div class="header__downdown--category">
+                        <h4>BY CATAGORY</h4>
+                      </div>
+                      <div class="header__downdown--collection">
+                        <h4>BY COLLECTION</h4>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header__dropdown-item hideOnMobile">
+                    JEWELLERY
+                    <div class="header__dropdown--info">
+                      <div class="header__downdown--category">
+                        <h4>BY CATAGORY</h4>
+                      </div>
+                      <div class="header__downdown--collection">
+                        <h4>BY COLLECTION</h4>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header__dropdown-item hideOnMobile">
+                    ENGAGEMENT & WEDDING
+                    <div class="header__dropdown--info">
+                      <div class="header__downdown--category">
+                        <h4>BY CATAGORY</h4>
+                      </div>
+                      <div class="header__downdown--collection">
+                        <h4>BY COLLECTION</h4>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header__dropdown-item hideOnMobile">
+                    WATCHES
+                    <div class="header__dropdown--info">
+                      <div class="header__downdown--category">
+                        <h4>BY CATAGORY</h4>
+                      </div>
+                      <div class="header__downdown--collection">
+                        <h4>BY COLLECTION</h4>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header__dropdown-item hideOnMobile">
+                    BAGS & ACCESSORIES
+                    <div class="header__dropdown--info">
+                      <div class="header__downdown--category">
+                        <h4>BY CATAGORY</h4>
+                      </div>
+                      <div class="header__downdown--collection">
+                        <h4>BY COLLECTION</h4>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="header-with-logo-onmobile">
+                      <div class="header__logo">
+                        <a href="index.html"
+                          ><img
+                            src="./assets/images/logodai.png"
+                            class="header__logo-img"
+                            alt="Logo"
+                        /></a>
+                      </div>
+                    </div>
+                  </li>
+                  <div class="navbar__mobile-left">
+                    <li>
+                      <i
+                        class="header__navbar-icon fa fa-shopping-bag"
+                        aria-hidden="true"
+                      ></i
+                      ><i class="header__navbar-icon fa-regular fa-heart"></i>
+                    </li>
+                  </div>
+                </ul>
+                <div class="search-hidden-box">
+                  <input type="text" placeholder="SEARCH" />
+                </div>
+              </div>
+            </div>
+          </nav>
         </div>
       </header>
       <!-- End Header -->
@@ -544,28 +641,7 @@
     </div> -->
     <!--End Modal layout -->
 
-    <script type="text/javascript">
-      window.addEventListener("scroll", function () {
-        var header = document.querySelector("header");
-        header.classList.toggle("sticky", window.scrollY > 0);
-        header.classList.toggle("mini", window.scrollY > 0);
-      });
-    </script>
-
-    <script>
-      window.addEventListener("scroll", function () {
-        var dropdowns = document.querySelectorAll(".header__dropdown--info");
-        var headerHeight = 93; // Height when scrolled down
-
-        dropdowns.forEach(function (dropdown) {
-          if (window.scrollY > 0) {
-            dropdown.classList.add("scroll");
-          } else {
-            dropdown.classList.remove("scroll");
-          }
-        });
-      });
-    </script>
+    <script src="./assets/js/indexscript.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
