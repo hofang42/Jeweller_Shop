@@ -5,12 +5,16 @@
   --primary-color: #fff;
   --border-color: #dbdbdb;
   --navbar-height: 34px;
-  --header-height: 135px;
+  --header-height: 130px;
+  --header-height-large: 130px;
+  --header-height-small: 105px;
   --droplist-height: 40px;
   --header-with-logo-height: calc(
-    var(--header-height) - var(--navbar-height) - var(--droplist-height)
+    var(--header-height) - var(--navbar-height) - var(--droplist-height) - 20px
   );
+  --dropdown-top: calc(var(--header-height) + 5px);
 }
+
 * {
   box-sizing: inherit;
   padding: 0;

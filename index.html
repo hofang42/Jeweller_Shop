@@ -548,6 +548,22 @@
       window.addEventListener("scroll", function () {
         var header = document.querySelector("header");
         header.classList.toggle("sticky", window.scrollY > 0);
+        header.classList.toggle("mini", window.scrollY > 0);
+      });
+    </script>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        var dropdowns = document.querySelectorAll(".header__dropdown--info");
+        var headerHeight = 93; // Height when scrolled down
+
+        dropdowns.forEach(function (dropdown) {
+          if (window.scrollY > 0) {
+            dropdown.classList.add("scroll");
+          } else {
+            dropdown.classList.remove("scroll");
+          }
+        });
       });
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
