@@ -13,7 +13,7 @@ header {
   top: 0;
   left: 0;
   width: 100%; /* Set header width to 100% of the viewport */
-  height: 150px;
+  height: 155px;
   display: flex;
   align-items: center; /* Center items vertically */
   justify-content: space-between; /* Space items evenly */
@@ -25,6 +25,14 @@ header {
   display: flex;
   justify-content: center;
   background-color: var(--white-color);
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 101;
+}
+.mini {
+  width: 90px;
 }
 header.sticky {
   padding: 0 5%;
@@ -378,6 +386,7 @@ header.sticky {
   width: 100%;
   height: 100vh; /* Full viewport height */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -418,6 +427,7 @@ header.sticky {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .body__bg-bgvideo {
   position: absolute;
@@ -457,12 +467,15 @@ header.sticky {
   background-color: rgba(255, 255, 255, 0.5);
   width: 300px;
   height: 90px;
-  position: absolute;
   justify-content: center;
-  right: 272.5px;
-  bottom: 50px;
   font-family: "Sedan SC", serif;
   font-weight: 400;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  min-width: 300px;
   text-align: center;
 }
 .body__collection-part--info h2 {
@@ -472,7 +485,7 @@ header.sticky {
 
 /* Quote */
 .body__quote {
-  /* display: flex; */
+  display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -480,6 +493,11 @@ header.sticky {
   display: block;
 }
 .body__quote-container {
+  justify-content: center;
+}
+
+.body__quote-box {
+  margin: 0;
   display: flex;
   justify-content: center;
 }
@@ -489,11 +507,13 @@ header.sticky {
   font-weight: 500;
   align-items: center;
   margin: 0;
-  line-height: 50px;
+  line-height: 30px;
   display: flex;
   justify-content: center;
 }
-
+.body_quote-para-noimg {
+  margin: 25px 0;
+}
 .body__quote-img {
   background-color: #ddd;
   border: none;
@@ -520,9 +540,6 @@ header.sticky {
   object-fit: cover;
 }
 /* Footer */
-footer {
-  padding: 0px 50px 20px 50px;
-}
 .footer_head {
   /* margin-top: 500px; */
   display: flex;
@@ -530,8 +547,8 @@ footer {
   align-items: center;
   height: 80px;
   background-color: #f0ede8;
-  margin-right: -50px;
-  margin-left: -50px;
+  /* margin-right: -50px; */
+  /* margin-left: -50px; */
 }
 
 .footer_head_subcribe {
@@ -540,7 +557,6 @@ footer {
   font-family: raleway;
   font-weight: 700;
   font-size: 13px;
-  margin-right: 200px;
 }
 
 .subcribe_text {
@@ -560,7 +576,6 @@ footer {
   align-items: center;
   font-family: raleway;
   font-size: 12px;
-  margin-left: 200px;
   color: black;
 }
 
@@ -577,6 +592,7 @@ footer {
   margin-top: 20px;
   font-family: raleway;
   font-size: 15px;
+  padding: 0px 50px 20px 50px;
 }
 
 .footer_body ul li {
@@ -649,14 +665,8 @@ footer {
   .header__navbar-item--toggle {
     display: block;
   }
-  .body__bg-bgvideo {
-    width: 100vw; /* Ensure video covers full viewport width */
-    height: calc(
-      100vw * 9 / 16
-    ); /* Calculate height based on 16:9 aspect ratio */
-    top: 50%; /* Re-center video vertically */
-    left: 0; /* Align video to the left */
-    transform: translate(0, -50%); /* Adjust transform for re-centering */
+  .body__quote-para {
+    font-size: 2rem;
   }
 }
 
@@ -681,5 +691,16 @@ footer {
   .body__bg-bgvideo {
     width: auto;
     height: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #fff;
+  }
+  .navbar-nav .nav-item + .nav-item {
+    margin-left: 0;
+  }
+  .navbar-toggler {
+    border: none;
   }
 }

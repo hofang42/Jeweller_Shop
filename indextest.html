@@ -27,130 +27,171 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <style>
+      .header__logo-img {
+        max-height: 50px;
+      }
+      .header__dropdown-item {
+        position: relative;
+      }
+      .header__dropdown--info {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+        z-index: 1000;
+      }
+      .header__dropdown-item:hover .header__dropdown--info {
+        display: block;
+      }
+      @media (max-width: 992px) {
+        .navbar-collapse {
+          background-color: #fff;
+        }
+        .navbar-nav .nav-item + .nav-item {
+          margin-left: 0;
+        }
+        .navbar-toggler {
+          border: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
     <div class="app">
-      <header class="">
-        <div class="grid">
-          <nav class="header__navbar">
-            <!-- Hamburger menu icon for smaller screens -->
-            <i
-              class="header__navbar-icon fa-solid fa-bars header__navbar-item--toggle"
-              onclick="toggleMenu()"
-            ></i>
-            <!-- Navbar lists container -->
-            <div class="header__navbar-container">
-              <ul class="header__navbar-list header__navbar-list--right">
-                <li
-                  class="header__navbar-item header__navbar-item--seperate header__navbar-item-responsive"
-                >
-                  <i class="header__navbar-icon fa-solid fa-bell-concierge"></i>
-                  Services
-                </li>
-                <li class="header__navbar-item header__navbar-item-responsive">
-                  <span class="header__navbar-title--no-pointer"
-                    >Connect us</span
-                  >
+      <header id="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img
+                src="./assets/images/logodai.png"
+                class="header__logo-img"
+                alt="Logo"
+              />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown header__dropdown-item">
                   <a
-                    href="https://facebook.com/hofang42"
-                    class="header__navbar-icon-link"
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown1"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                    <i class="header__navbar-icon fa-brands fa-facebook"></i>
+                    HIGH JEWELLERY
                   </a>
-                  <a href="" class="header__navbar-icon-link">
-                    <i class="header__navbar-icon fa-brands fa-instagram"></i>
-                  </a>
-                </li>
-                <li class="header__navbar-item">
-                  <i
-                    class="header__navbar-icon fa-solid fa-magnifying-glass"
-                  ></i>
-                  <input
-                    type="text"
-                    class="header__navbar--searchbox"
-                    placeholder="SEARCH"
-                  />
-                </li>
-              </ul>
-              <ul class="header__navbar-list header__navbar-list--left">
-                <li class="header__navbar-item header__navbar-user">
-                  <img
-                    src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-1/356897934_777936193800003_6546687517946988960_n.jpg?stp=dst-jpg_p100x100&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFY2tcIFAsxFwb3EW_JgdyukEEFnMPttrqQQQWcw-22usKY3UkBKkmXR3bD_fQXKp7Y0cXi1VtVydDVeWI3CCsZ&_nc_ohc=mLV6n1XXQpwQ7kNvgFaqkKf&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fdad1-3.fna&oh=00_AYA4-CRiHQmRgmNXdcgSKC87LKIuMnaR30VX-4EsawbNxQ&oe=6655EFAD"
-                    alt="Avt"
-                    class="header__navbar-user-img"
-                  />
-                  <span class="header__navbar-user-name">Khanh Pham</span>
-                  <ul class="header__navbar-user-menu">
-                    <li class="header__navbar-user-item">
-                      <a href="">My Account</a>
-                    </li>
-                    <li class="header__navbar-user-item">
-                      <a href="">Log out</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="header__navbar-item">
-                  <i
-                    class="header__navbar-icon fa fa-shopping-bag"
-                    aria-hidden="true"
-                  ></i>
-                  <a href="" class="header__navbar-item-link">
-                    Shopping bags
-                  </a>
-                </li>
-                <li class="header__navbar-item">
-                  <i class="header__navbar-icon fa-regular fa-heart"></i>
-                  <a href="#" class="header__navbar-item-link">My Wishlist</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <div class="header-with-logo">
-            <div class="header__logo">
-              <a href="index.html"
-                ><img
-                  src="./assets/images/logodai.png"
-                  class="header__logo-img"
-                  alt="Logo"
-              /></a>
-            </div>
-          </div>
-          <div class="header-with-dropdown">
-            <div class="header__dropdown-list">
-              <ul class="header__dropdown-list--list">
-                <li class="header__dropdown-item">
-                  HIGH JEWELLERY
-                  <div class="header__dropdown--info">
-                    <div class="header__downdown--category">
-                      <h4>BY CATAGORY</h4>
-                    </div>
-                    <div class="header__downdown--collection">
-                      <h4>BY COLLECTION</h4>
-                    </div>
+                  <div
+                    class="header__dropdown--info dropdown-menu"
+                    aria-labelledby="navbarDropdown1"
+                  >
+                    <div class="dropdown-item">BY CATEGORY</div>
+                    <div class="dropdown-item">BY COLLECTION</div>
                   </div>
                 </li>
-                <li class="header__dropdown-item">
-                  JEWELLERY
-                  <div class="header__dropdown--info">AAAAAA</div>
+                <li class="nav-item dropdown header__dropdown-item">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown2"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    JEWELLERY
+                  </a>
+                  <div
+                    class="header__dropdown--info dropdown-menu"
+                    aria-labelledby="navbarDropdown2"
+                  >
+                    <div class="dropdown-item">BY CATEGORY</div>
+                    <div class="dropdown-item">BY COLLECTION</div>
+                  </div>
                 </li>
-                <li class="header__dropdown-item">
-                  ENGAGEMENT & WEDDING
-                  <div class="header__dropdown--info">AAAAAA</div>
+                <li class="nav-item dropdown header__dropdown-item">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown3"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    ENGAGEMENT & WEDDING
+                  </a>
+                  <div
+                    class="header__dropdown--info dropdown-menu"
+                    aria-labelledby="navbarDropdown3"
+                  >
+                    <div class="dropdown-item">BY CATEGORY</div>
+                    <div class="dropdown-item">BY COLLECTION</div>
+                  </div>
                 </li>
-                <li class="header__dropdown-item">
-                  WATCHES
-                  <div class="header__dropdown--info">AAAAAA</div>
+                <li class="nav-item dropdown header__dropdown-item">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown4"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    WATCHES
+                  </a>
+                  <div
+                    class="header__dropdown--info dropdown-menu"
+                    aria-labelledby="navbarDropdown4"
+                  >
+                    <div class="dropdown-item">BY CATEGORY</div>
+                    <div class="dropdown-item">BY COLLECTION</div>
+                  </div>
                 </li>
-                <li class="header__dropdown-item">
-                  BAGS & ACCESSORIES
-                  <div class="header__dropdown--info">AAAAAA</div>
+                <li class="nav-item dropdown header__dropdown-item">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown5"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    BAGS & ACCESSORIES
+                  </a>
+                  <div
+                    class="header__dropdown--info dropdown-menu"
+                    aria-labelledby="navbarDropdown5"
+                  >
+                    <div class="dropdown-item">BY CATEGORY</div>
+                    <div class="dropdown-item">BY COLLECTION</div>
+                  </div>
                 </li>
               </ul>
             </div>
           </div>
-        </div>
+        </nav>
       </header>
+
       <!-- End Header -->
       <!-- Start Body -->
       <div class="contrainer">
@@ -494,7 +535,7 @@
     <script type="text/javascript">
       window.addEventListener("scroll", function () {
         var header = document.querySelector("header");
-        header.classList.toggle("sticky", window.scrollY > 0);
+        header.classList.toggle("sticky mini", window.scrollY > 0);
       });
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
