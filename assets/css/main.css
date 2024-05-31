@@ -421,6 +421,57 @@ header.sticky {
   top: 93px; /* Top position when scrolled */
 }
 
+/* Header dropdown detail */
+.header__downdown--category,
+.header__downdown--collection {
+  margin-top: 20px;
+}
+.header__downdown--category {
+  border-right: 1px solid var(--border-color);
+}
+.header__downdown--collection {
+  border-left: 1px solid var(--border-color);
+}
+.dropdown-title {
+  display: flex;
+  margin-left: 20px;
+}
+.dropdown-text {
+  font-size: 18px;
+  margin-right: 5px;
+}
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  justify-content: space-evenly;
+  word-wrap: break-word;
+}
+.card-info {
+  display: inline-block;
+  width: 90px;
+  height: 120px;
+  flex: 1 1 21%;
+  margin: 10px;
+}
+.card-image {
+  width: 90px;
+  height: 90px;
+}
+.card-name {
+  display: block;
+}
+
+.text-underline {
+  text-decoration: underline !important;
+}
+.black-text-no-underline:hover {
+  color: var(--black-color);
+}
+
+.black-text-no-underline {
+  color: var(--black-color);
+}
 .header__dropdown-item:hover .header__dropdown--info {
   margin-top: 10px;
   display: block;
@@ -712,6 +763,7 @@ header.sticky {
     display: flex;
     justify-content: space-between;
   }
+
   .header-with-logo-onmobile {
     display: flex;
   }
