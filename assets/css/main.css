@@ -591,6 +591,9 @@ header.sticky {
   object-fit: cover;
 }
 /* Footer */
+.footer {
+  margin-top: 100px;
+}
 .footer_head {
   /* margin-top: 500px; */
   display: flex;
