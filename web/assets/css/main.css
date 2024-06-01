@@ -662,14 +662,11 @@ header.sticky {
   margin-top: 100px;
 }
 .footer_head {
-  /* margin-top: 500px; */
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 80px;
   background-color: #f0ede8;
-  /* margin-right: -50px; */
-  /* margin-left: -50px; */
 }
 
 .footer_head_subcribe {
