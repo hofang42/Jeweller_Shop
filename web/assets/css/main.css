@@ -773,11 +773,15 @@ header.sticky {
   }
 
   .body__quote-para {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .header__dropdown-list--list {
     display: flex;
     justify-content: space-between;
+  }
+  .body__quote-img {
+    width: 100px;
+    height: 30px;
   }
 
   .header-with-logo-onmobile {
