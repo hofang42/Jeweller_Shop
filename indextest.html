@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="./assets/fonts/fontawesome-free-6.5.2-web/fontawesome-free-6.5.2-web/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .header__logo-img {
+        max-height: 50px;
+      }
+      .header__dropdown-item {
+        position: relative;
+      }
+      .header__dropdown--info {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+        z-index: 1000;
+      }
+      .header__dropdown-item:hover .header__dropdown--info {
+        display: block;
+      }
+      @media (max-width: 992px) {
+        .navbar-collapse {
+          background-color: #fff;
+        }
+        .navbar-nav .nav-item + .nav-item {
+          margin-left: 0;
+        }
+        .navbar-toggler {
+          border: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="app">
+      <header id="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img
+                src="./assets/images/logodai.png"
+                class="header__logo-img"
+                alt="Logo"
+              />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown header__dropdown-item">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown1"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    HIGH JEWELLERY
+                  </a>
+                  <div
+                    class="header__dropdown--info dropdown-menu"
+                    aria-labelledby="navbarDropdown1"
+                  >
+                    <div class="dropdown-item">BY CATEGORY</div>
+                    <div class="dropdown-item">BY COLLECTION</div>
+                  </div>
+                </li>
+                <li class="nav-item dropdown header__dropdown-item">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown2"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    JEWELLERY
+                  </a>
+                  <div
+                    class="header__dropdown--info dropdown-menu"
+                    aria-labelledby="navbarDropdown2"
+                  >
+                    <div class="dropdown-item">BY CATEGORY</div>
+                    <div class="dropdown-item">BY COLLECTION</div>
+                  </div>
+                </li>
+                <li class="nav-item dropdown header__dropdown-item">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown3"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    ENGAGEMENT & WEDDING
+                  </a>
+                  <div
+                    class="header__dropdown--info dropdown-menu"
+                    aria-labelledby="navbarDropdown3"
+                  >
+                    <div class="dropdown-item">BY CATEGORY</div>
+                    <div class="dropdown-item">BY COLLECTION</div>
+                  </div>
+                </li>
+                <li class="nav-item dropdown header__dropdown-item">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown4"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    WATCHES
+                  </a>
+                  <div
+                    class="header__dropdown--info dropdown-menu"
+                    aria-labelledby="navbarDropdown4"
+                  >
+                    <div class="dropdown-item">BY CATEGORY</div>
+                    <div class="dropdown-item">BY COLLECTION</div>
+                  </div>
+                </li>
+                <li class="nav-item dropdown header__dropdown-item">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown5"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    BAGS & ACCESSORIES
+                  </a>
+                  <div
+                    class="header__dropdown--info dropdown-menu"
+                    aria-labelledby="navbarDropdown5"
+                  >
+                    <div class="dropdown-item">BY CATEGORY</div>
+                    <div class="dropdown-item">BY COLLECTION</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- End Header -->
+      <!-- Start Body -->
+      <div class="contrainer">
+        <div class="body">
+          <div class="body__section-bigimm">
+            <div class="body__bg-video row">
+              <div class="col-md-12 col-sm-12">
+                <video
+                  autoplay
+                  loop
+                  muted
+                  plays-inline
+                  disablePictureInPicture
+                  class="body__bg-bgvideo"
+                  type="video/mp4"
+                  controlsList="nodownload"
+                >
+                  <source src="./assets/images/bg-video.mp4" />
+                </video>
+              </div>
+            </div>
+            <div class="body__bg-content">
+              <h1>RLOYAL</h1>
+              <a href="#">Explore now</a>
+            </div>
+          </div>
+          <div class="body__sub-collection-image row">
+            <div class="body__collection-part col-md-6 col-sm-6 no-padding">
+              <div class="body__collection-part--img">
+                <img
+                  src="./assets/images/collection-body1.jpg"
+                  alt="Collection 1"
+                />
+              </div>
+              <div class="body__collection-part--info">
+                <h2>Collection 1</h2>
+                <p>New Collection from the future</p>
+              </div>
+            </div>
+            <div class="body__collection-part col-md-6 col-sm-6 no-padding">
+              <div class="body__collection-part--img">
+                <img
+                  src="./assets/images/collection-body2.jpg"
+                  alt=" Collection 2"
+                />
+              </div>
+              <div class="body__collection-part--info">
+                <h2>Collection 2</h2>
+                <p>New Collection from the future</p>
+              </div>
+            </div>
+          </div>
+          <div class="body__quote">
+            <p class="body__quote-para">
+              JEWELRY IS MORE THAN JUST AN ACCESSORY, IT IS AN
+            </p>
+            <div class="body__quote-container">
+              <p class="body__quote-para">
+                EXPRESSION AND
+                <span class="body__quote-img"
+                  ><img src="./assets/images/earringsgold-body-para.jpg" alt=""
+                /></span>
+                TIMELESS BEAUTY
+              </p>
+            </div>
+            <p class="body__quote-para">
+              THAT'S THE REASON WHY EACH PIECE IN OUR COLLECTION
+            </p>
+            <p class="body__quote-para">
+              IS THOUGHTFULLY CURATED AND EXPERTLY CRAFTED USING
+            </p>
+            <div class="body__quote-container">
+              <p class="body__quote-para">
+                <span class="body__quote-img"
+                  ><img src="./assets/images/body-para-img.jpg" alt="" /></span
+                >THE HIGHEST QUALITY MATERIALS.<span class="body__quote-img"
+                  ><img src="./assets/images/body-para-img2.jpg" alt=""
+                /></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Body -->
+      <!--FOOTER-->
+      <footer class="footer">
+        <div class="footer_head">
+          <div class="footer_head_subcribe">
+            <div class="subcribe_text">SUBCRIBE TO OUR NEWSLETTER</div>
+            <input
+              class="subcribe_box"
+              type="email"
+              placeholder="Email Address"
+            />
+          </div>
+
+          <div class="footer_head_follow">
+            <div class="follow_text">FOLLOW US</div>
+            <a
+              href="https://www.instagram.com"
+              class="icon-link"
+              target="_blank"
+            >
+              <i class="fa-brands fa-square-instagram"></i>
+            </a>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
+        </div>
+
+        <div class="row footer_body">
+          <div class="col footer_body_sec_1">
+            <div class="footer_body_sec_1_A">
+              <ul>
+                <p>CUSTOMER CARE</p>
+                <li>Order information</li>
+                <li>Book an appointment</li>
+                <li>Track your order</li>
+                <li>Returns</li>
+                <li>FAQ</li>
+                <li>Services</li>
+              </ul>
+            </div>
+
+            <div class="footer_body_sec_1_B">
+              <ul>
+                <p>FIND A STORE</p>
+                <li>
+                  <i class="fa-solid fa-map-location-dot"></i>
+                  Store locator
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col footer_body_sec_2">
+            <ul>
+              <p>CONTACT US</p>
+              <li>
+                <i class="fa-solid fa-address-book"></i>
+                Contact us
+              </li>
+              <li>
+                <i class="fa-solid fa-user-tie"></i>
+                Book an in-person appointment
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                E-mail us
+              </li>
+            </ul>
+          </div>
+
+          <div class="col footer_body_sec_3">
+            <ul>
+              <p>ABOUT US</p>
+              <li>Our commitment</li>
+              <li>Ethics & compliance</li>
+              <li>People and careers</li>
+              <li>Brand protection</li>
+              <li>Hotel & resort</li>
+              <li>The maison</li>
+            </ul>
+          </div>
+
+          <div class="col footer_body_sec_4">
+            <div class="footer_body_sec_4_A">
+              <ul>
+                <p>PRIVACY CENTER</p>
+                <li>Cookies Setting</li>
+                <li>Cookie policy</li>
+                <li>Privacy policy</li>
+                <li>Candidate privacy notice</li>
+                <li>Data Proctection Cercification (BS10012)</li>
+              </ul>
+            </div>
+
+            <div class="footer_body_sec_4_B">
+              <ul>
+                <p>LEGAL</p>
+                <li>Term and conditions</li>
+                <li>Legal notices adn terms of use</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer_end">
+          <div class="footer_end_left_sec">
+            <p>BVLGARI® Official Website Vietnam</p>
+          </div>
+
+          <div class="footer_end_right_sec">
+            <div class="footer_end_right_sec_A">
+              <button>
+                SHIPPING TO: VIETNAM
+                <i class="fa-solid fa-caret-down"></i>
+              </button>
+            </div>
+
+            <div class="footer_end_right_sec_B">
+              <button>
+                ENGLISH
+                <i class="fa-solid fa-caret-down"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--END FOOTER-->
+    </div>
+
+    <!-- Modal layout -->
+    <!-- <div class="modal">s
+      <div class="modal__overlay"></div>
+
+      <div class="modal__body"> -->
+    <!-- Register Form -->
+    <!-- <div class="auth-form">
+          <div class="auth-form__container">
+            <div class="auth-form__header">
+              <h3 class="auth-form__heading">Sign up</h3>
+              <span class="auth-form__switch-btn">Sign in</span>
+            </div>
+            <div class="auth-form__form">
+              <div class="auth-form__group">
+                <input
+                  type="text"
+                  class="auth-form__input"
+                  placeholder="Username"
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  class="auth-form__input"
+                  placeholder="Password"
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  class="auth-form__input"
+                  placeholder="Enter Password again"
+                />
+              </div>
+            </div>
+            <div class="auth-form__aside">
+              <p class="auth-form__policy-text">
+                By signing up, you agree to XXX's
+                <a href="#" class="auth-form__text-link">Terms of Services</a>
+                &
+                <a href="#" class="auth-form__text-link">Privacy Policy</a>
+              </p>
+            </div>
+
+            <div class="auth-form__controls">
+              <button class="btn btn--normal auth-form__controls-back">
+                BACK
+              </button>
+              <button class="btn btn--primary">REGISTER</button>
+            </div>
+          </div>
+
+          <div class="auth-form__socials">
+            <a
+              class="auth-form__socials--facebook btn btn--size-s btn--with-icon"
+            >
+              <i class="auth-form__socials-icon fa-brands fa-facebook-f"></i>
+              <span class="auth-form__socials-title">Facebook</span>
+            </a>
+            <a
+              class="auth-form__socials--google btn btn--size-s btn--with-icon"
+            >
+              <i class="auth-form__socials-icon fa-brands fa-google"></i
+              ><span class="auth-form__socials-title">Google</span></a
+            >
+          </div>
+        </div> -->
+    <!-- Login Form -->
+    <!-- <div class="auth-form">
+          <div class="auth-form__container">
+            <div class="auth-form__header">
+              <h3 class="auth-form__heading">Sign in</h3>
+              <span class="auth-form__switch-btn">Sign up</span>
+            </div>
+            <div class="auth-form__form">
+              <div class="auth-form__group">
+                <input
+                  type="text"
+                  class="auth-form__input"
+                  placeholder="Username"
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  class="auth-form__input"
+                  placeholder="Password"
+                />
+              </div>
+            </div>
+            <div class="auth-form__aside">
+              <div class="auth-form__help">
+                <a href="" class="auth-form__help-link auth-form__help-forgot"
+                  >Forgor Password</a
+                >
+                <span class="auth-form__separate"></span>
+                <a href="" class="auth-form__help-link">Need Help?</a>
+              </div>
+            </div>
+
+            <div class="auth-form__controls">
+              <button class="btn btn--normal auth-form__controls-back">
+                BACK
+              </button>
+              <button class="btn btn--primary">LOGIN</button>
+            </div>
+          </div>
+
+          <div class="auth-form__socials">
+            <a
+              class="auth-form__socials--facebook btn btn--size-s btn--with-icon"
+            >
+              <i class="auth-form__socials-icon fa-brands fa-facebook-f"></i>
+              <span class="auth-form__socials-title">Facebook</span>
+            </a>
+            <a
+              class="auth-form__socials--google btn btn--size-s btn--with-icon"
+            >
+              <i class="auth-form__socials-icon fa-brands fa-google"></i
+              ><span class="auth-form__socials-title">Google</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!--End Modal layout -->
+
+    <script type="text/javascript">
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky mini", window.scrollY > 0);
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
