@@ -663,11 +663,14 @@ header.sticky {
 }
 .footer_head {
   /* margin-top: 500px; */
+  /* margin-top: 500px; */
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 80px;
   background-color: #f0ede8;
+  /* margin-right: -50px; */
+  /* margin-left: -50px; */
   /* margin-right: -50px; */
   /* margin-left: -50px; */
 }
@@ -707,12 +710,20 @@ header.sticky {
 .footer_head_follow i {
   margin-right: 30px;
   font-size: 25px;
+  color: black;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.footer_head_follow i:hover{
+  transform: scale(1.2);
 }
 
 .footer_body {
   margin-top: 20px;
   font-family: raleway;
   font-size: 15px;
+  padding: 0px 50px 20px 50px;
   padding: 0px 50px 20px 50px;
 }
 
@@ -749,6 +760,20 @@ header.sticky {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+select {
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--select-border);
+  /* border-radius: 0.25em; */
+  padding: 0.25em 0.5em;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  font-family: raleway;
 }
 
 /*End footer*/
