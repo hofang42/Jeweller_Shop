@@ -475,6 +475,7 @@ header.sticky {
   height: 90px;
 }
 .card-name {
+  height: 30px;
   display: block;
 }
 
