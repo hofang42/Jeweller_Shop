@@ -432,10 +432,16 @@
   margin-right: 40px;
 }
 
-.footer_head_follow i {
+.footer_head_follow i{
   margin-right: 30px;
   font-size: 25px;
   color: black;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.footer_head_follow i:hover{
+  transform: scale(1.2);
 }
 
 .footer_body {
