@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RLoyal</title>
+    <title>Category_page</title>
 
     <link rel="stylesheet" href="./assets/css/normalize.css" />
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/category.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,7 +28,6 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
   </head>
   <body>
     <!-- Header -->
@@ -541,122 +541,408 @@
         </div>
       </header>
       <!-- End Header -->
-      <!-- Start Body -->
-      <div class="contrainer">
-        <div class="body">
-          <div class="body__bg-content">
-            <div class="body__bg-video">
-              <video
-                autoplay
-                loop
-                muted
-                plays-inline
-                disablePictureInPicture
-                class="body__bg-bgvideo"
-                type="video/mp4"
-                controlsList="nodownload"
+
+      <!--Start Body_category-->
+      <body class="body_category_page">
+        <div class="body_head">
+          <div class="body_head_sec_1">
+            <a href="index.html">HOME</a>
+          </div>
+
+          <div class="body_head_sec_2">
+            <p>FINE JEWELLERY ONLINE</p>
+          </div>
+
+          <div class="body_head_sec_3">
+            <button onclick="location.href='index.html';">Bracelets</button>
+
+            <button onclick="location.href='index.html';">Cufflinks</button>
+
+            <button onclick="location.href='index.html';">Earrings</button>
+
+            <button onclick="location.href='index.html';">Necklaces</button>
+
+            <button onclick="location.href='index.html';">Pendants</button>
+
+            <button onclick="location.href='index.html';">Rings</button>
+
+            <button onclick="location.href='index.html';">Wedding Rings</button>
+          </div>
+
+          <div class="body_head_sec_4">
+            <div class="body_head_sec_4_A">
+              <p>Showing 36 of 401</p>
+            </div>
+
+            <div class="body_head_sec_4_B">
+              <label for="">Sort by: </label>
+              <select name="" id="">
+                <option value="">None</option>
+                <option value="">Recommended</option>
+                <option value="">Best seller</option>
+                <option value="">Price High to Low</option>
+                <option value="">Price Low to High</option>
+                <option value="">New Arrivals</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="body_head_sec_5">
+            <p>
+              <i class="fa-solid fa-filter"></i>
+              Filter by:
+            </p>
+
+            <div class="body_head_sec_5_category">
+              <button
+                onclick="toggleDropdown('categoryDropdown')"
+                class="dropbtn"
               >
-                <source src="./assets/images/bg-video.mp4" />
-              </video>
-            </div>
-            <div class="body__bg-content-text">
-              <div>
-                <h1>RLOYAL</h1>
-                <a href="#">Explore now</a>
+                Category
+                <i
+                  for="rotateCheckbox"
+                  id="rotateButton"
+                  class="fa-solid fa-caret-down"
+                ></i>
+              </button>
+              <div id="categoryDropdown" class="dropdown-content">
+                <ul class="category_dropdown">
+                  <li>
+                    <a href="index.html">
+                      <span>Bracelets (60)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Cufflinks (5)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Earrings (50)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Necklaces (142)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Pendant (1)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Rings (114)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Wedding Rings (21)</span>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
-          <div class="spacer small"></div>
-          <div class="body__sub-collection-image row">
-            <div class="body__collection-part col-md-6 col-sm-12 no-padding">
-              <div class="body__collection-part--img">
-                <img
-                  src="./assets/images/collection-body1.jpg"
-                  alt="Collection 1"
-                />
-              </div>
-              <div class="body__collection-part--info">
-                <h2>Collection 1</h2>
-                <p>New Collection from the future</p>
+
+            <div class="body_head_sec_5_collection">
+              <button
+                onclick="toggleDropdown('collectionDropdown')"
+                class="dropbtn"
+              >
+                Collection
+                <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <div id="collectionDropdown" class="dropdown-content">
+                <ul class="collection_dropdown">
+                  <li>
+                    <a href="index.html">
+                      <span>Allegra (5)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>B.zero1 (117)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Bvlgari Bvlgari (46)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Bvlgari Cabochon (4)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Corona (1)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Croce (1)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Divas’ Dream (68)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Fedi (5)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Fiorever (34)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Griffe (1)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Incontro d’Amore (2)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Infinito (5)</span>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="body__collection-part col-md-6 col-sm-12 no-padding">
-              <div class="body__collection-part--img">
-                <img
-                  src="./assets/images/collection-body2.jpg"
-                  alt=" Collection 2"
-                />
-              </div>
-              <div class="body__collection-part--info">
-                <h2>Collection 2</h2>
-                <p>New Collection from the future</p>
-              </div>
-            </div>
-          </div>
-          <div class="body__quote">
-            <div class="body__quote-container">
-              <p class="body__quote-para body_quote-para-noimg">
-                JEWELRY IS MORE THAN JUST AN ACCESSORY, IT IS AN
-              </p>
-              <div class="body__quote-box">
-                <p class="body__quote-para">
-                  EXPRESSION AND
-                  <span class="body__quote-img"
-                    ><img
-                      src="./assets/images/earringsgold-body-para.jpg"
-                      alt=""
-                  /></span>
-                  TIMELESS BEAUTY
-                </p>
-              </div>
-              <p class="body__quote-para body_quote-para-noimg">
-                THAT'S THE REASON WHY EACH PIECE IN OUR COLLECTION
-              </p>
-              <p class="body__quote-para body_quote-para-noimg">
-                IS THOUGHTFULLY CURATED AND EXPERTLY CRAFTED USING
-              </p>
-              <div class="body__quote-box">
-                <p class="body__quote-para">
-                  <span class="body__quote-img"
-                    ><img
-                      src="./assets/images/body-para-img.jpg"
-                      alt="" /></span
-                  >THE HIGHEST QUALITY MATERIALS.<span class="body__quote-img"
-                    ><img src="./assets/images/body-para-img2.jpg" alt=""
-                  /></span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="body__sub-collection-image row">
-            <div class="body__collection-part col-md-6 col-sm-12 no-padding">
-              <div class="body__collection-part--img">
-                <img
-                  src="./assets/images/collection-body1.jpg"
-                  alt="Collection 1"
-                />
-              </div>
-              <div class="body__collection-part--info">
-                <h2>Collection 1</h2>
-                <p>New Collection from the future</p>
-              </div>
-            </div>
-            <div class="body__collection-part col-md-6 col-sm-12 no-padding">
-              <div class="body__collection-part--img">
-                <img
-                  src="./assets/images/collection-body2.jpg"
-                  alt=" Collection 2"
-                />
-              </div>
-              <div class="body__collection-part--info">
-                <h2>Collection 2</h2>
-                <p>New Collection from the future</p>
+
+            <div class="body_head_sec_5_color">
+              <button onclick="toggleDropdown('colorDropdown')" class="dropbtn">
+                Color
+                <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <div id="colorDropdown" class="dropdown-content">
+                <ul class="color_dropdown">
+                  <li>
+                    <a href="index.html">
+                      <span>Pink (12)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Yellow (8)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>White (50)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Black (40)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Blue (13)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Bronze (2)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Green (38)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Orange (1)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Red (20)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Light Blue (1)</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="index.html">
+                      <span>Multicolor (9)</span>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- End Body -->
+
+        <div class="body_category">
+          <div class="category_container_1">
+            <div class="category_banner_1">
+              <a href="">
+                <p class="banner_title">B.ZERO1 JEWELRY</p>
+                <img
+                  class="banner_img"
+                  src="assets/images/1920x1080-second-modal_kbilgp.avif"
+                  alt=""
+                />
+                <p class="banner_discover">DISCOVER</p>
+              </a>
+            </div>
+
+            <div class="category_product_1">
+              <img
+                class="product_img"
+                src="assets/images/1448222.avif"
+                alt=""
+              />
+            </div>
+
+            <div class="category_product_1">
+              <img
+                class="product_img"
+                src="assets/images/1476157.avif"
+                alt=""
+              />
+            </div>
+
+            <div class="category_product_1">
+              <img
+                class="product_img"
+                src="assets/images/1530581.avif"
+                alt=""
+              />
+            </div>
+
+            <div class="category_product_1">
+              <img class="product_img" src="assets/images/454275.avif" alt="" />
+            </div>
+          </div>
+
+          <div class="category_container_2">
+            <div class="category_banner_2">
+              <a href="">
+                <p class="banner_title">B.ZERO1 JEWELRY</p>
+                <img
+                  class="banner_img"
+                  src="assets/images/1920x1080-second-modal_kbilgp.avif"
+                  alt=""
+                />
+                <p class="banner_discover">DISCOVER</p>
+              </a>
+            </div>
+
+            <div class="category_product_2">
+              <img
+                class="product_img"
+                src="assets/images/1448222.avif"
+                alt=""
+              />
+            </div>
+
+            <div class="category_product_2">
+              <img
+                class="product_img"
+                src="assets/images/1476157.avif"
+                alt=""
+              />
+            </div>
+
+            <div class="category_product_2">
+              <img
+                class="product_img"
+                src="assets/images/1530581.avif"
+                alt=""
+              />
+            </div>
+
+            <div class="category_product_2">
+              <img class="product_img" src="assets/images/454275.avif" alt="" />
+            </div>
+          </div>
+
+          <div class="product_container">
+            <div class="product_container_row_1">
+              <div class="product_img">
+                <img src="assets/images/1448229.avif" alt="" />
+              </div>
+
+              <div class="product_img">
+                <img src="assets/images/454302.avif" alt="" />
+              </div>
+
+              <div class="product_img">
+                <img src="assets/images/1476152.avif" alt="" />
+              </div>
+
+              <div class="product_img">
+                <img src="assets/images/1530582.avif" alt="" />
+              </div>
+            </div>
+
+            <input type="checkbox" name="" id="ch" />
+            <div class="product_container_row_2">
+              <div class="product_img">
+                <img src="assets/images/1448229.avif" alt="" />
+              </div>
+
+              <div class="product_img">
+                <img src="assets/images/454302.avif" alt="" />
+              </div>
+
+              <div class="product_img">
+                <img src="assets/images/1476152.avif" alt="" />
+              </div>
+
+              <div class="product_img">
+                <img src="assets/images/1530582.avif" alt="" />
+              </div>
+            </div>
+            <label for="ch">SEE MORE</label>
+          </div>
+        </div>
+      </body>
+      <!--End Body_category-->
+
       <!--Start Footer-->
       <footer class="footer">
         <div class="footer_head row">
@@ -719,7 +1005,7 @@
           </div>
 
           <div class="col footer_body_sec_2">
-            <ul class="">
+            <ul>
               <p>CONTACT US</p>
               <li>
                 <i class="fa-solid fa-address-book"></i>
@@ -778,9 +1064,9 @@
           <div class="footer_end_right_sec">
             <div class="footer_end_right_sec_A">
               <!-- <button>
-                      SHIPPING TO: VIETNAM
-                      <i class="fa-solid fa-caret-down"></i>
-                    </button> -->
+                SHIPPING TO: VIETNAM
+                <i class="fa-solid fa-caret-down"></i>
+              </button> -->
               <label for="">SHIPPING TO: </label>
               <select name="" id="">
                 <option value="">VIETNAM</option>
@@ -791,30 +1077,30 @@
                 <option value="">RUSSIA</option>
               </select>
             </div>
-          </div>
-          <div class="footer_end_right_sec_B">
-            <!-- <button>
-                      ENGLISH
-                      <i class="fa-solid fa-caret-down"></i>
-                    </button> -->
 
-            <select name="" id="">
-              <option value="">ENGLISH</option>
-              <option value="">VIETNAMESE</option>
-              <option value="">CHINESE</option>
-              <option value="">JAPANESE</option>
-              <option value="">KOREAN</option>
-              <option value="">RUSSIAN</option>
-            </select>
+            <div class="footer_end_right_sec_B">
+              <!-- <button>
+                ENGLISH
+                <i class="fa-solid fa-caret-down"></i>
+              </button> -->
+
+              <select name="" id="">
+                <option value="">ENGLISH</option>
+                <option value="">VIETNAMESE</option>
+                <option value="">CHINESE</option>
+                <option value="">JAPANESE</option>
+                <option value="">KOREAN</option>
+                <option value="">RUSSIAN</option>
+              </select>
+            </div>
           </div>
         </div>
       </footer>
-
-      <!--End footer-->
     </div>
+    <!--End footer-->
 
     <!-- Modal layout -->
-    <!-- <div class="modal">s
+    <!-- <div class="modal">
       <div class="modal__overlay"></div>
 
       <div class="modal__body"> -->
@@ -940,9 +1226,7 @@
     </div> -->
     <!--End Modal layout -->
 
-    <script src="./assets/js/indexscript.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--FOOTER-->
+    <!--END FOOTER-->
   </body>
 </html>
