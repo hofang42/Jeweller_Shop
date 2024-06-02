@@ -4,6 +4,7 @@
  */
 package JDBC;
 
+import Model.Product;
 import Model.Product_Category;
 import Model.Product_collection;
 import java.sql.Connection;
@@ -67,10 +68,25 @@ public class DAO extends DBContext {
         }
         return cList;
     }
+    
+    public List<Product> getAllProduct() {
+        List<Product> cList = new ArrayList<>();
+        String sql = "SELECT * FROM Product ";
+        try {
+            PreparedStatement st = con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                cList.add(new Product(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString("image")));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getCause());
+        }
+        return cList;
+    }
     public static void main(String[] args) {
         DAO d = new DAO();
-        List<Product_collection> cList = d.getAllCollectionByCategory(1);
-        for(Product_collection p : cList) {
+        List<Product> cList = d.getAllProduct();
+        for(Product p : cList) {
             System.out.println(p.toString());
         }
     }
