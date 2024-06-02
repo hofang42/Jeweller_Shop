@@ -18,7 +18,7 @@
                 <div class="dropdown-title">
                     <h4 class="dropdown-text">BY CATAGORY</h4>
                     |&nbsp;<span class="text-underline"
-                                 ><a href="#" class="black-text-no-underline"
+                                 ><a href="/Rloyal/product" class="black-text-no-underline"
                         >View all</a
                         ></span
                     >
