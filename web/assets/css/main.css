@@ -447,13 +447,17 @@ header.sticky {
   justify-content: space-evenly;
   word-wrap: break-word;
 }
+.dropdown-showbox {
+  display: flex;
+  flex-direction: column;
+}
 .card-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90px;
-  height: 30px;
-  /* padding: 6px 10px; */
+  /* width: 90px; */
+  /* height: 30px; */
+
   flex: 1 1 21%;
   margin: 10px;
   border: 2px solid var(--black-color);
@@ -496,7 +500,9 @@ header.sticky {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
+.dropdown-showbox-block {
+  display: block;
+}
 /* Body Content */
 .body__bg-content {
   position: relative;
