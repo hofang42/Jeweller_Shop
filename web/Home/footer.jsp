@@ -294,7 +294,7 @@
         var category = document.getElementById("category_" + index).value;
         $.ajax({
             url: "/Rloyal/home",
-            type: "post",
+            type: "get",
             data: {
                 cat: category
             },

@@ -9,7 +9,7 @@
 <!--End Navbar mobile -->
 <!-- Navbar List (Hang ngang khi hover vao dropdown xuat hien) -->
 <!-- 1 category o hang navbar list (Neu for each cai nay thi 1 day hang ngang se xuat hien)-->
-<c:forEach items="${requestScope.data}" var="category" varStatus="status" >
+<c:forEach items="${data}" var="category" varStatus="status" >
     <li class="header__dropdown-item hideOnMobile" onmouseover="GetId(${status.index}); GetIdForCollection(${status.index})">
         <input type="hidden" id="category_${status.index}" value="${category.product_category_id}">
         ${category.product_category_name} 

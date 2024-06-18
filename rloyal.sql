@@ -26,13 +26,12 @@ create table Discount(
 )
 
 create table Product(
-	product_id int primary key,
+	product_id INT IDENTITY(1,1) primary key,
 	product_name varchar(50),
 	product_category_id int,
 	product_collection_id int,
-	created_at date, 
+	created_at date default getdate(), 
 	modified_at date,
-	deleted_at date,
 	discount_id int,
 	original_price decimal(10,2),
 	sale_price decimal(10,2),
@@ -42,6 +41,11 @@ create table Product(
 	foreign key(discount_id) references Discount(discount_id),
 )
 drop table Product
+
+create table Product_img(
+	img_id int identity(1,1) primary key,
+	img_
+)
 
 drop table Product_Inventory
 create table Product_Inventory(
@@ -73,6 +77,19 @@ create table Product_Info(
 	pendant varchar,
 	colour varchar,
 	foreign key (product_id) references Product(product_id) 
+)
+drop table user_web
+create table user_web(
+	user_id INT IDENTITY(1,1) PRIMARY KEY,
+	user_name nvarchar(100),
+	user_phone varchar(15)  CONSTRAINT chk_phone CHECK (user_phone LIKE '[0-9]%'),
+	user_email varchar(255) CONSTRAINT chk_email CHECK (user_email LIKE '%_@_%._%'),
+	password VARCHAR(255) NOT NULL,
+    CONSTRAINT chk_password CHECK (LEN(password) >= 8),
+	user_realname nvarchar(100) not null,
+	isUser int,
+	isAdmin int,
+	created_at date,
 )
 
 INSERT INTO Product_Category ( product_category_parent_id, product_category_name) VALUES
@@ -171,26 +188,30 @@ create table Product(
 	foreign key(discount_id) references Discount(discount_id),
 )
 
-INSERT INTO Product (product_id, product_name, product_category_id, product_collection_id) VALUES
-(1, 'B.Zero1 Necklace', 6, 1),
-(2, 'Serpenti Viper Ring', 7, 2),
-(3, 'Serpenti Viper Bracelet', 8, 2),
-(4, 'Divas'' Dream Earrings', 9, 3),
-(5, 'Bvlgari Cabochon Ring', 7, 4),
-(6, 'Fiorever Pendant', 6, 6),
-(7, 'Save the Children Necklace', 6, 7),
-(8, 'Monete Bracelet', 8, 8),
-(9, 'Incontro d''Amore Ring', 11, 9),
-(10, 'Infinito Wedding Band', 12, 10)
-(11, 'Dedicata a Venezia Engagement Ring', 11, 11),
-(12, 'Marryme Wedding Band', 12, 11),
-(13, 'Serpenti Watch', 16, 13),
-(14, 'Lvcea Watch', 16, 14),
-(15, 'Octo Watch', 16, 16),
-(16, 'Bvlgari Bvlgari Bag', 21, 5),
-(17, 'Bvlgari Allegra Fragrance', 22, 22),
-(18, 'Omnia Fragrance', 24, 24),
-(19, 'Bvlgari Man Fragrance', 27, 27)
+INSERT INTO Product (product_name, product_category_id, product_collection_id, image) VALUES
+('B.Zero1 Necklace', 6, 1,'B.ZERO1 NECKLACE.avif'),
+('Serpenti Viper Ring', 7, 2, 'Serpenti Viper Ring.avif'),
+('Serpenti Viper Bracelet', 8, 2, 'Serpenti Viper Bracelet.avif'),
+('Divas'' Dream Earrings', 9, 3, 'Divas'' Dream Earrings.avif'),
+('Bvlgari Cabochon Ring', 7, 4, 'Bvlgari Cabochon Ring.avif'),
+('Fiorever Necklace', 6, 6, 'Fiorever Necklace.png'),
+('Save the Children Necklace', 6, 7, 'Save the Children Necklace.avif'),
+('Monete Cufflinks', 10, 8, 'MONETE CUFFLINKS.avif'),
+('Incontro d''Amore Ring', 11, 9, 'Incontro d''Amore Ring.avif'),
+('Infinito Wedding Band', 12, 10, 'Infinito Wedding Band.avif'),
+('Dedicata a Venezia Engagement Ring', 12, 11, 'Dedicata a Venezia Engagement Ring.avif'),
+('Marryme Wedding Band', 12, 12, 'Marryme Wedding Band.avif'),
+('Serpenti Tubogas Watch', 16, 14, 'SERPENTI TUBOGAS WATCH.avif'),
+('Lvcea Watch', 18, 16, 'Lvcea Watch.avif'),
+('Octo Roma Watch', 18, 18, 'Octo Roma Watch.avif'),
+('Bvlgari Roma Medium Top Handle Bag', 22, 21, 'Bvlgari Roma Medium Top Handle Bag.avif'),
+('BVLGARI ALLEGRA PASSEGGIATA EAU DE PARFUM', 28, 26, 'BVLGARI ALLEGRA PASSEGGIATA EAU DE PARFUM.avif'),
+('OMNIA CRYSTALLINE EAU DE TOILETTE', 29, 28, 'OMNIA CRYSTALLINE EAU DE TOILETTE.avif'),
+('EAU PARFUMÉE AU THÉ BLANC EAU DE COLOGNE SPRAY', 30, 29, 'EAU PARFUMÉE AU THÉ BLANC EAU DE COLOGNE SPRAY.avif')
 
 ALTER TABLE product_collection
 ADD image NVARCHAR(500);
+
+insert into user_web (user_name, user_phone, user_email, password, user_realname, isUser, isAdmin) values
+('hwangphuc76', '0983028278', 'vacpro66@gmail.com', 'na290604', 'Tran Van Hoang Phuc', 1, 0),
+('hoangphuc', '0905536131', 'phuctvhde180493@gmail.com', 'na290604', 'Hoang Phuc Tran Van', 0, 1),

@@ -5,23 +5,24 @@
 package Controller;
 
 import JDBC.DAO;
-import Model.Product_Category;
-import Model.Product_collection;
+import Model.User;
+import Model.UserBean;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 /**
  *
  * @author LENOVO
  */
-@WebServlet(name = "HomeServlet", urlPatterns = {"/home"})
-public class HomeServlet extends HttpServlet {
+@WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
+public class LoginServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,10 +36,34 @@ public class HomeServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String username = request.getParameter("user"),
+                pass = request.getParameter("password"),
+                remember = request.getParameter("remember"),
+                logout = request.getParameter("name");
         DAO d = new DAO();
-        List<Product_Category> cList = d.getAllCategoryNoParents();
-        request.setAttribute("data", cList);
-        request.getRequestDispatcher("home.jsp").forward(request, response);
+        User user = d.getUser(username, pass);
+        if (user == null) {
+            request.setAttribute("mess", "Wrong user or password!");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        } else {
+            HttpSession session = request.getSession();
+            session.setAttribute("acc", user);
+            Cookie u = new Cookie("user", username);
+            Cookie p = new Cookie("pass", pass);
+            u.setMaxAge(60);
+            if (remember != null) {
+                p.setMaxAge(60);
+            } else {
+                p.setMaxAge(0);
+            }
+        if (logout != null) {
+            session.removeAttribute("acc");
+        response.sendRedirect("home.jsp");
+        }
+            response.addCookie(u);
+            response.addCookie(p);
+            request.getRequestDispatcher("/home").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -53,25 +78,25 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String sid = request.getParameter("cat");
-        int id = Integer.parseInt(sid);
-        DAO d = new DAO();
-        List<Product_Category> list = d.getAllCategoryHaveParentsByName(id);
-        PrintWriter out = response.getWriter();
-        for (Product_Category p : list) {
-            out.println("<li class=\"card-info\" id=\"category_detail_${status.index}\">\n"
-                    + "                            <a href=\"#\" class=\"card-link\">\n"
-                    + "                                <!-- <img\n"
-                    + "                                  src=\"./assets/images/logongan.png\"\n"
-                    + "                                  alt=\"\"\n"
-                    + "                                  class=\"card-image\"\n"
-                    + "                                /> -->\n"
-                    + "                                <span class=\"card-name black-text-no-underline\"\n"
-                    + "                                      >" + p.getProduct_category_name() + "</span\n"
-                    + "                                >\n"
-                    + "                            </a>\n"
-                    + "                        </li>");
+        Cookie arr[] = request.getCookies();
+        if (arr != null) {
+            UserBean user = new UserBean();
+            for (Cookie o : arr) {
+                if (o.getName().equals("user")) {
+                    user.setUsername(o.getValue());
+                    request.setAttribute("username", o.getValue());
+                }
+                if (o.getName().equals("pass")) {
+                    user.setPassword(o.getValue());
+                    request.setAttribute("pass", o.getValue());
+                }
+            }
+            request.setAttribute("userBean", user);
+            request.setAttribute("username", user.getUsername());
+            request.setAttribute("password", user.getPassword());
         }
+        request.getRequestDispatcher("login.jsp").forward(request, response);
+
     }
 
     /**
@@ -86,7 +111,6 @@ public class HomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
     }
 
     /**

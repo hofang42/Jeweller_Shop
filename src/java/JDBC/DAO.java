@@ -7,6 +7,7 @@ package JDBC;
 import Model.Product;
 import Model.Product_Category;
 import Model.Product_collection;
+import Model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -68,7 +69,7 @@ public class DAO extends DBContext {
         }
         return cList;
     }
-    
+
     public List<Product> getAllProduct() {
         List<Product> cList = new ArrayList<>();
         String sql = "SELECT * FROM Product ";
@@ -83,11 +84,95 @@ public class DAO extends DBContext {
         }
         return cList;
     }
+
+    public User getUser(String user, String pass) {
+        User u = null;
+        String sql = "SELECT * FROM USER_WEB WHERE USER_NAME=? AND PASSWORD=? ";
+        try {
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setString(1, user);
+            st.setString(2, pass);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                u = new User(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+                        rs.getInt(8)
+                );
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getCause());
+        }
+        return u;
+    }
+
+    public boolean Product_Insert(String name, int cId, int pId, String img) {
+        PreparedStatement stmt = null;
+        int c = 0;
+        try {
+            // Sử dụng câu lệnh SQL với OUTPUT INSERTED.id
+            String sql = "INSERT INTO Product (product_name, product_category_id, product_collection_id, image) OUTPUT INSERTED.product_id VALUES(?,?,?,?)";
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1, name);
+            stmt.setInt(2, cId);
+            stmt.setInt(3, pId);
+            stmt.setString(4, img);
+
+            // Sử dụng executeQuery để lấy ResultSet trả về
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+               c++;
+            }
+            return c > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
+    public boolean Product_Update(int prId, String name, int cId, int pId, String img) {
+        PreparedStatement stmt = null;
+        try {
+            // Sử dụng câu lệnh SQL với OUTPUT INSERTED.id
+            String sql = "UPDATE PRODUCT SET Product_name=?, product_category_id=?, product_collection_id=?, image=? where product_id=?";
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1, name);
+            stmt.setInt(2, cId);
+            stmt.setInt(3, pId);
+            stmt.setString(4, img);
+            stmt.setInt(5, prId);
+
+            int rowUpdate = stmt.executeUpdate();
+            return rowUpdate > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
+    public boolean Product_Delete(int id) {
+        PreparedStatement stmt = null;
+        try {
+            String sql = "DELETE FROM Product WHERE product_id = ?";
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, id);
+
+            int rowsDeleted = stmt.executeUpdate();
+            return rowsDeleted > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         DAO d = new DAO();
-        List<Product> cList = d.getAllProduct();
-        for(Product p : cList) {
-            System.out.println(p.toString());
-        }
+        d.Product_Delete(20);
     }
 }

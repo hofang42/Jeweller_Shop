@@ -5,8 +5,6 @@
 package Controller;
 
 import JDBC.DAO;
-import Model.Product_Category;
-import Model.Product_collection;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -14,14 +12,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 /**
  *
  * @author LENOVO
  */
-@WebServlet(name = "HomeServlet", urlPatterns = {"/home"})
-public class HomeServlet extends HttpServlet {
+@WebServlet(name = "AdminServlet", urlPatterns = {"/admin"})
+public class AdminServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,9 +33,41 @@ public class HomeServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         DAO d = new DAO();
-        List<Product_Category> cList = d.getAllCategoryNoParents();
-        request.setAttribute("data", cList);
-        request.getRequestDispatcher("home.jsp").forward(request, response);
+        String addPro = request.getParameter("addSubmit"),
+                delete = request.getParameter("delete_submit"),
+                update = request.getParameter("update_submit");
+        if (addPro != null) {
+            String proName = request.getParameter("product_name"),
+                    proId = request.getParameter("product_category_id"),
+                    proCollection = request.getParameter("product_collection_id"),
+                    img = request.getParameter("image_link");
+            if (d.Product_Insert(proName, Integer.parseInt(proId), Integer.parseInt(proCollection), img)) {
+                request.setAttribute("mess", "Add Success");
+            } else {
+                request.setAttribute("mess", "Add failed");
+            };
+        } else if (delete != null) {
+            String id = request.getParameter("product_id_delete");
+            if (d.Product_Delete(Integer.parseInt(id))) {
+                request.setAttribute("mess1", "Delete Success");
+            } else {
+                request.setAttribute("mess1", "Delete fail");
+            }
+        }
+        if (update != null) {
+            String id = request.getParameter("product_id_update"),
+                    name = request.getParameter("product_name_update"),
+                    pId = request.getParameter("product_category_id_update"),
+                    cId = request.getParameter("product_collection_id_update"),
+                    img = request.getParameter("image_link_update");
+            if (d.Product_Update(Integer.parseInt(id), name,Integer.parseInt(pId) , Integer.parseInt(cId), img)) {
+                 request.setAttribute("mess2", "Update Success");
+            } else {
+                 request.setAttribute("mess2", "Update failed");
+            }
+        }
+        request.getRequestDispatcher("admin.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -53,25 +82,7 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String sid = request.getParameter("cat");
-        int id = Integer.parseInt(sid);
-        DAO d = new DAO();
-        List<Product_Category> list = d.getAllCategoryHaveParentsByName(id);
-        PrintWriter out = response.getWriter();
-        for (Product_Category p : list) {
-            out.println("<li class=\"card-info\" id=\"category_detail_${status.index}\">\n"
-                    + "                            <a href=\"#\" class=\"card-link\">\n"
-                    + "                                <!-- <img\n"
-                    + "                                  src=\"./assets/images/logongan.png\"\n"
-                    + "                                  alt=\"\"\n"
-                    + "                                  class=\"card-image\"\n"
-                    + "                                /> -->\n"
-                    + "                                <span class=\"card-name black-text-no-underline\"\n"
-                    + "                                      >" + p.getProduct_category_name() + "</span\n"
-                    + "                                >\n"
-                    + "                            </a>\n"
-                    + "                        </li>");
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -86,7 +97,6 @@ public class HomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
     }
 
     /**
