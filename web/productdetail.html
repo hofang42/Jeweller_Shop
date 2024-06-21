@@ -546,13 +546,62 @@
       <!-- Start Body -->
       <div class="container-fluid">
         <div class="product__detail-top col">
-          <div class="product__detail-left col-md-6 col-sm-12">
-            <div class="product__detail-slide"></div>
+          <div class="product__detail-left col-md-6 col-12">
             <div class="product__detail-big-img">
-              <img src="./assets/images/body-para-img.jpg" alt="" />
+              <img
+                src="./assets/images/body-para-img.jpg"
+                alt=""
+                id="featured"
+              />
+            </div>
+            <div class="product__detail-wrapper" id="slider">
+              <img
+                src="./assets/images/left-arrow.png"
+                class="arrow"
+                id="slideLeft"
+              />
+              <div class="product__detail-slider">
+                <img
+                  src="./assets/images/body-para-img2.jpg"
+                  alt="Slide"
+                  class="product__detail-thumbnail active"
+                />
+
+                <img
+                  src="./assets/images/body-para-img2.jpg"
+                  alt="Slide"
+                  class="product__detail-thumbnail active"
+                />
+                <img
+                  src="./assets/images/body-para-img.jpg"
+                  alt="Slide"
+                  class="product__detail-thumbnail"
+                />
+                <img
+                  src="./assets/images/body-para-img2.jpg"
+                  alt="Slide"
+                  class="product__detail-thumbnail active"
+                />
+                <img
+                  src="./assets/images/earringsgold-body-para.jpg"
+                  alt="Slide"
+                  class="product__detail-thumbnail"
+                />
+                <img
+                  src="./assets/images/body-para-img2.jpg"
+                  alt="Slide"
+                  class="product__detail-thumbnail active"
+                />
+              </div>
+              <img
+                src="./assets/images/right-arrow.png"
+                class="arrow"
+                id="slideRight"
+              />
             </div>
           </div>
-          <div class="product__detail-right col-md-6 col-sm-12">
+
+          <div class="product__detail-right col-md-6 col-12">
             <div class="product__detail-product-name">
               <h1>PRODUCT NAME</h1>
             </div>
@@ -913,5 +962,6 @@
       </footer>
       <!--END FOOTER-->
     </div>
+    <script src="assets/js/indexscript.js"></script>
   </body>
 </html>
