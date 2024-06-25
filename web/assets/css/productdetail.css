@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@300;400;500;700;900&family=Sedan+SC&display=swap");
+
+.product__detail-top {
+  display: flex;
+}
+
+.product__detail-big-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product__detail-big-img img {
+  max-height: 50rem;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid var(--black-color);
+}
+.product__detail-product-sub-descrip {
+  display: block;
+}
+
+.container-fluid {
+  margin-top: var(--header-height);
+}
+
+.product__detail-product-name {
+  text-align: center;
+  margin: 10px 0 20px 0;
+  font-family: "Sedan SC", serif;
+}
+
+.product__detail-product-sub-descrip {
+  margin: 20px 0;
+}
+
+.product__detail-product-sub-descrip h2 {
+  text-transform: none !important;
+  color: #1f1f1f;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.product__detail-price {
+  /* display: flex; */
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.product__detail-price h1 {
+}
+.tax {
+  line-height: 5.5rem;
+  padding: 0 0.625rem;
+  margin-top: -0.625rem;
+}
+.shoppable-price {
+  text-align: right;
+  justify-content: space-evenly;
+  white-space: nowrap;
+  display: block;
+  font-weight: bold;
+  font-size: 2.575rem;
+  line-height: 5.25rem;
+  margin-top: -0.625rem;
+  text-align: left;
+}
+
+.button__add-to-cart-btn {
+  display: flex;
+  justify-content: center;
+}
+.btn-add-cart {
+  width: 45rem;
+  height: 5rem;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  font-size: 20px;
+  font-family: "Sedan SC", serif;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.benefit {
+  margin-left: 5px;
+  font-size: 10px;
+}
+
+.backspace-between {
+  margin: 50px 0;
+}
+
+.full-descrip-title {
+  text-align: center;
+  font-family: "Sedan SC", serif;
+}
+.full-descrip-para {
+  font-size: 20px;
+  font-family: "Sedan SC", serif;
+  margin: 0 50px;
+  text-align: justify;
+}
+
+.cell {
+  flex: 0 0 auto;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+}
+.description-details-divider {
+  border-right: 1px solid silver;
+  height: 100%;
+  position: relative;
+  right: 50%;
+}
+
+.divider-cell {
+  width: 5%;
+}
+
+.custom-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none; /* Remove default arrow */
+  background-color: #fff;
+  /* background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="%23000" stroke-width=".5" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>'); Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 8px 10px;
+  margin: 10px 0;
+}
+.custom-select option {
+  padding: 10px;
+  font-size: 16px;
+}
+.full-detail-title {
+  font-family: "Sedan SC", serif;
+  text-align: center;
+}
+
+.full-detail-para {
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0 50px;
+}
+.full-detail-para ul {
+  list-style-type: none;
+}
+
+.details-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.details-list li .detail-icon {
+  margin-right: 10px;
+  color: #b29672; /* Adjust color as needed */
+  font-size: 18px; /* Adjust size as needed */
+}
+.details-list li strong {
+  font-weight: bold;
+  color: #000;
+}
+/* Slider */
+#featured {
+  max-width: 500px;
+  max-height: 600px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid var(--black-color);
+}
+
+.product__detail-thumbnail {
+  object-fit: cover;
+  max-width: 18rem;
+  max-height: 10rem;
+  cursor: pointer;
+  opacity: 0.5;
+  margin: 5px;
+  border: 1px solid black;
+}
+.product__detail-thumbnail:hover {
+  opacity: 1;
+}
+
+.active {
+  opacity: 1;
+}
+
+.product__detail-wrapper {
+  display: flex;
+  min-height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+.product__detail-slider {
+  max-width: 30rem;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.arrow {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  opacity: 0.5;
+  width: 7rem;
+  height: 7rem;
+}
+
+@media (max-width: 767.98px) {
+  .product__detail-top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product__detail-left,
+  .product__detail-right {
+    width: 100%; /* Full width for both columns */
+    order: 1; /* Default order */
+  }
+
+  .product__detail-right {
+    margin-top: 15px; /* Optional: Add spacing between columns */
+  }
+}

@@ -447,13 +447,17 @@ header.sticky {
   justify-content: space-evenly;
   word-wrap: break-word;
 }
+.dropdown-showbox {
+  display: flex;
+  flex-direction: column;
+}
 .card-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90px;
-  height: 30px;
-  /* padding: 6px 10px; */
+  /* width: 90px; */
+  /* height: 30px; */
+
   flex: 1 1 21%;
   margin: 10px;
   border: 2px solid var(--black-color);
@@ -475,7 +479,6 @@ header.sticky {
   height: 90px;
 }
 .card-name {
-  height: 30px;
   display: block;
 }
 
@@ -497,7 +500,9 @@ header.sticky {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
+.dropdown-showbox-block {
+  display: block;
+}
 /* Body Content */
 .body__bg-content {
   position: relative;
@@ -663,14 +668,11 @@ header.sticky {
   margin-top: 100px;
 }
 .footer_head {
-  /* margin-top: 500px; */
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 80px;
   background-color: #f0ede8;
-  /* margin-right: -50px; */
-  /* margin-left: -50px; */
 }
 
 .footer_head_subcribe {
@@ -704,19 +706,12 @@ header.sticky {
 .follow_text {
   margin-right: 40px;
 }
-.follow-icon {
-}
 
 .footer_head_follow i {
   margin-right: 30px;
   font-size: 25px;
-  color: black;
-  cursor: pointer;
-  transition: transform 0.3s ease;
 }
-.footer_head_follow i:hover {
-  transform: scale(1.2);
-}
+
 .footer_body {
   margin-top: 20px;
   font-family: raleway;
