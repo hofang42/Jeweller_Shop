@@ -8,67 +8,40 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="body_category">
-    <div class="category_container_1">
-        <div class="category_banner_1">
-            <a href="">
-                <p class="banner_title">B.ZERO1 JEWELRY</p>
-                <img
-                    class="banner_img"
-                    src="assets/images/1920x1080-second-modal_kbilgp.avif"
-                    alt=""
-                    />
-                <p class="banner_discover">DISCOVER</p>
-            </a>
-        </div>
-        <c:forEach items="${requestScope.product}" var="product" begin="0" end="3">
-            <c:if test="${product.product_id <= 4}">
+
+
+
+    <div class="product_container">
+        <div class="product_container_row_1">
+            <c:forEach items="${product}" var="product" varStatus="status">
                 <div class="category_product_1">
+                    <input type="hidden" id="product_${status.index}" value="${product_id}">
                     <img
                         class="product_img"
                         src="./product_img/${product.image}"
                         alt=""
                         />
-                </div>
-            </c:if>
-        </c:forEach>
-
-    </div>
-
-    <div class="category_container_2">
-        <div class="category_banner_2">
-            <a href="">
-                <p class="banner_title">B.ZERO1 JEWELRY</p>
-                <img
-                    class="banner_img"
-                    src="assets/images/1920x1080-second-modal_kbilgp.avif"
-                    alt=""
-                    />
-                <p class="banner_discover">DISCOVER</p>
-            </a>
-        </div>
-        <c:forEach items="${requestScope.product}" var="pro" begin="0" end="7">
-            <c:if test="${pro.product_id > 4}">
-                <div class="category_product_2">
-                    <img
-                        class="product_img"
-                        src="./product_img/${pro.image}"
-                        alt=""
-                        />      
-                </div>
-            </c:if>
-        </c:forEach>
-
-
-    </div>
-
-    <div class="product_container">
-        <div class="product_container_row_1">
-            <c:forEach items="${product}" var="product">
-                <c:if test="${product.product_id > 8}">
-                    <div class="product_img">
-                        <img src="./product_img/${product.image}" alt="" />
+                    <div class="product_describe_overlay" id="product_detail_${status.index}">
+                        <p class="product_name">
+                            B.ZERO1 RING
+                        </p>
+                        <p class="product_material">
+                            Material
+                            <br>
+                            <span class="product_material_type">Rose gold</span>
+                        </p>
+                        <p class="product_germstone">
+                            Germstone
+                            <br>
+                            <span class="product_germstone_type">Diamond</span>
+                        </p>
+                        <p class="product_price">
+                            <span class="product_price_num">đ165,000,000</span>
+                            <span class="product_price_taxes">Including Taxes</span>
+                        </p>
+                        <button class="product_discover_more">DISCOVER MORE</button>
                     </div>
-                </c:if>
+                </div>
             </c:forEach>
         </div>
         <input type="checkbox" name="" id="ch" />

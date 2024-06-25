@@ -7,6 +7,7 @@ package Controller;
 import JDBC.DAO;
 import Model.Product;
 import Model.Product_Category;
+import Model.Product_collection;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -80,7 +81,25 @@ public class ListProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String sid = request.getParameter("pro");
+        int id = Integer.parseInt(sid);
+        DAO d = new DAO();
+        List<Product_collection> sList = d.getAllCollectionByCategory(id);
+        PrintWriter out = response.getWriter();
+        for (Product_collection p : sList) {
+            out.println(" <li class=\"card-info-collection\" id=\"collection_${status.index}\">\n"
+                    + "                            <a href=\"#\" class=\"card-link\">\n"
+                    + "                                <img\n"
+                    + "                                    src=\"./img/" + p.getImage() + "\"\n"
+                    + "                                    alt=\"\"\n"
+                    + "                                    class=\"card-image\"\n"
+                    + "                                    />\n"
+                    + "                                <span class=\"card-name black-text-no-underline\"\n"
+                    + "                                      >" + p.getProduct_collection_name() + "</span\n"
+                    + "                                >\n"
+                    + "                            </a>\n"
+                    + "                        </li>");
+        }
     }
 
     /**

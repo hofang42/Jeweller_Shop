@@ -295,7 +295,7 @@
         var category = document.getElementById("category_" + index).value;
         $.ajax({
             url: "/Rloyal/home",
-            type: "post",
+            type: "get",
             data: {
                 cat: category
             },
@@ -306,7 +306,7 @@
         });
     }
 </script>
-<<script type="text/javascript">
+<script type="text/javascript">
     function GetIdForCollection(index) {
         var category = document.getElementById("category_" + index).value;
         $.ajax({
@@ -317,6 +317,23 @@
             },
             success: function (data) {
                 var row = document.getElementById("collection_" + index);
+                row.innerHTML = data;
+            }
+        });
+
+    }
+</script>
+<script type="text/javascript">
+    function GetIdForProduct(index) {
+        var product = document.getElementById("category_" + index).value;
+        $.ajax({
+            url: "/Rloyal/product",
+            type: "post",
+            data: {
+                pro: product
+            },
+            success: function (data) {
+                var row = document.getElementById("product_detail_" + index);
                 row.innerHTML = data;
             }
         });
