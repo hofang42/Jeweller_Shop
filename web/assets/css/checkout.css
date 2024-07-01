@@ -10,28 +10,37 @@
 /* ***************************
 Order Summary
 ****************************/
+
+.total-money {
+  max-width: 87vw;
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+}
 .header-checkout {
+  margin-top: 200px;
   width: 100%;
   padding: 20px;
-  border-bottom: 1px solid #999;
 }
 
 .order-summary {
   width: 100%;
   margin: 0 auto;
   border-collapse: collapse;
+  display: flex;
+  justify-content: center;
 }
 
 .order-summary table {
-  width: 100%;
+  width: 80%;
   border-spacing: 0;
+  border-bottom: 1px solid #999;
 }
 
 .order-summary th,
 .order-summary td {
   padding: 10px;
   text-align: center;
-  border-bottom: 1px solid #ddd;
 }
 
 .order-summary th {
@@ -128,12 +137,11 @@ form .row {
   margin-top: 15px;
 }
 .input-box img {
-  /* height: 35px; */
   margin-top: 5px;
   filter: drop-shadow(0 0 1px #000);
 }
 
-form .btn {
+form .btnsubmit {
   width: 100%;
   padding: 12px;
   background-color: #333;
@@ -147,6 +155,6 @@ form .btn {
   transform: 0.5s;
 }
 
-form .btn:hover {
+form .btnsubmit:hover {
   background-color: #555;
 }
