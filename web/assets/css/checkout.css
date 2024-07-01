@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ***************************
+Order Summary
+****************************/
+.header-checkout {
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #999;
+}
+
+.order-summary {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.order-summary table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+.order-summary th,
+.order-summary td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-summary th {
+  font-weight: bold;
+}
+
+.order-summary td img.product-image {
+  width: 50px;
+  height: auto;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.order-summary td:nth-child(4),
+.order-summary td:nth-child(5) {
+  text-align: right;
+}
+
+.order-summary th:nth-child(3),
+.order-summary th:nth-child(4),
+.order-summary th:nth-child(5) {
+  text-align: right;
+}
+
+.order-summary tr:last-child td {
+  border-bottom: none;
+}
+.order-summary img {
+  max-height: 5rem;
+  max-width: 5rem;
+}
+
+/* ****************************
+Card Form
+*********************************/
+.body-checkout,
+.delivery-address {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 25px;
+}
+
+.body-checkout form {
+  width: 700px;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.delivery-address form {
+  width: 700px;
+  padding: 40px;
+  border-radius: 10px;
+}
+form .row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.row .column {
+  flex: 1 1 250px;
+}
+
+.column .title {
+  padding-bottom: 20px;
+  font-size: 20px;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #999;
+}
+
+.column .input-box {
+  margin: 15px 0;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.column .flex {
+  display: flex;
+  gap: 15px;
+}
+
+.flex .input-box {
+  margin-top: 15px;
+}
+.input-box img {
+  /* height: 35px; */
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+form .btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  outline: line;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 17px;
+  margin-top: 5px;
+  transform: 0.5s;
+}
+
+form .btn:hover {
+  background-color: #555;
+}

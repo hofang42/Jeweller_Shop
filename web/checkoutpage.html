@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/checkout.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Checkout Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-checkout col-md-12">
+        <div class="order-summary">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2" class="bold-text">Order Summary</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="./assets/images/favicon.png" alt="" /></td>
+                <td>Golden Rings</td>
+                <td class="bold-text">1</td>
+                <td class="bold-text">1.000.000</td>
+                <td class="bold-text">Pending</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="body-contain row">
+        <div class="body-checkout col-md-6">
+          <form action="">
+            <div class="row">
+              <div class="column">
+                <h3 class="title">Billing Address</h3>
+                <div class="input-box">
+                  <span>Full Name :</span>
+                  <input type="text" placeholder="Tran Van Hoang Phuc" />
+                </div>
+                <div class="input-box">
+                  <span>Email :</span>
+                  <input
+                    type="email"
+                    placeholder="phuctvhde180xxx@fpt.edu.vn"
+                  />
+                </div>
+                <div class="input-box">
+                  <span>Address :</span>
+                  <input type="text" placeholder="Room - Street - Locality" />
+                </div>
+                <div class="input-box">
+                  <span>City :</span>
+                  <input type="text" placeholder="Da Nang" />
+                </div>
+                <div class="flex">
+                  <div class="input-box">
+                    <span>State :</span>
+                    <input type="text" placeholder="Hoa Hai" />
+                  </div>
+                  <div class="input-box">
+                    <span>Zip Code :</span>
+                    <input type="number" placeholder="123 456" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <h3 class="title">Payment</h3>
+                <div class="input-box">
+                  <span>Cards Accepted :</span>
+                  <img src="./assets/images/imgcards.png" alt="" />
+                </div>
+                <div class="input-box">
+                  <span>Name On Card :</span>
+                  <input type="text" placeholder="Tran Van Hoang Phuc" />
+                </div>
+                <div class="input-box">
+                  <span>Credit Card Number :</span>
+                  <input type="number" placeholder="1111 2222 3333 4444" />
+                </div>
+                <div class="input-box">
+                  <span>Exp. Month :</span>
+                  <input type="text" placeholder="August" />
+                </div>
+                <div class="flex">
+                  <div class="input-box">
+                    <span>Exp. Year :</span>
+                    <input type="numer" placeholder="2025" />
+                  </div>
+                  <div class="input-box">
+                    <span>CVV :</span>
+                    <input type="number" placeholder="123" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+        <div class="delivery-address col-md-6">
+          <form action="">
+            <div class="row">
+              <div class="column">
+                <h3 class="title">DELIVERY ADDRESS</h3>
+                <div class="input-box">
+                  <span>First Name :</span>
+                  <input type="text" placeholder="Phuc" />
+                </div>
+                <div class="input-box">
+                  <span>Last Name :</span>
+                  <input type="text" placeholder="Tran Van Hoang " />
+                </div>
+                <div class="input-box">
+                  <span>Address :</span>
+                  <input type="text" placeholder="Room - Street - Locality" />
+                </div>
+                <div class="input-box">
+                  <span>Mobile Phone</span>
+                  <input type="number" placeholder="123 456 7890" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
