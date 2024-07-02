@@ -1,0 +1,153 @@
+.shopping_bag{
+    font-family: raleway;
+}
+
+.shopping_bag_title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 550;
+}
+
+.item_2_container{
+    background-color: rgb(235, 122, 160);
+}
+
+.order_summary_container{
+    background-color: rgb(240,237,232);
+}
+
+.shopping_bag_container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    margin: 10px 200px;
+}
+
+.shopping_bag{
+    margin-top: 200px;
+}
+
+.order_summary_container{
+    padding: 20px 20px 80px 20px;
+}
+
+.order_summary_title{
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.total{
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    text-align: center;
+}
+
+.total_title{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.order_summary_container button{
+    width: 100%;
+    padding: 10px 0px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.check_out_button{
+    color: white;
+    background-color: black;
+}
+
+.continue_button{
+    border: solid 1px black;
+    background-color: transparent;
+    color: black;
+}
+
+.item_1_container{
+    padding: 20px 0px;
+    font-size: 15px;
+    border-top: solid 1px black;
+}
+
+.remove_button{
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.remove_button button{
+    border: none;
+    background-color: transparent;
+    font-weight: 500;
+}
+
+.item_1_info{
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr;
+}
+
+.item_1_img_name{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.item_img, .item_name{
+    margin: 0px 5px;
+}
+
+.item_price, .item_size, .item_code{
+    display: flex;
+    justify-content: space-between;
+}
+
+.item_img{
+    width: 15%;
+    object-fit: cover;
+}
+
+.item_size_code{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-left: 80px;
+    padding-right: 80px;
+    font-size: 13px;
+}
+
+.item_quantity_select{
+    width: 100px;
+    padding: 7px 0px;
+}
+
+.money, .size, .code{
+    font-weight: 500;
+}
+.item_quantity span{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+}
+
+.item_quantity span.num{
+    font-size: 16px;
+    border-right: 2px solid rgba(0,0,0,0.2);
+    border-left: 2px solid rgba(0,0,0,0.2);
+    pointer-events: none;
+
+}
+.item_quantity input {
+    margin-left: 1%;
+    width: 10%
+}
