@@ -199,3 +199,39 @@ create table Product(
 	foreign key(discount_id) references Discount(discount_id),
 )
 
+create table order_details(
+	id int identity(1,1) primary key,
+	user_id int,
+	full_name nvarchar(50),
+	email nvarchar(255) CONSTRAINT chkEmail CHECK (Email LIKE '%_@__%.__%'),
+	address nvarchar(100),
+	city nvarchar(50),
+	phone_number nvarchar(20) CONSTRAINT chk_PhoneNumber CHECK (phone_number LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
+	state nvarchar(50),
+	zipcode int,
+	foreign key (user_id) references user_web(user_id)
+);
+
+create table order_items(
+	id int identity(1,1) primary key,
+	product_id int foreign key references product(product_id), 
+	quantity int,
+	payment_id int foreign key references payment_details(id)
+)
+
+create table payment_details(
+	id int identity(1,1) primary key,
+	user_id int,
+	full_name nvarchar(50),
+	email nvarchar(255) CONSTRAINT chkEmail CHECK (Email LIKE '%_@__%.__%'),
+	address nvarchar(100),
+	city nvarchar(50),
+	phone_number nvarchar(20) CONSTRAINT chk_PhoneNumber CHECK (phone_number LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
+	state nvarchar(50),
+	zipcode int,
+	amount int,
+	status nvarchar(30),
+	created_at date default getdate(),
+	foreign key (user_id) references user_web(user_id)
+)
+insert into payment_details (user_id, full_name, email, address, city, phone_number, state, zipcode, amount, status) values

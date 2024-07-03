@@ -56,7 +56,6 @@
                             ></a>
                     </div>
                     <span>or use your email password</span>
-                    <jsp:useBean id="userBean" class="Model.UserBean" scope="request" />
                     <input type="text" placeholder="username" name="user" 
                            value="${username}"/>
                     <input type="password" placeholder="password" name="password" 

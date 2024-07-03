@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="./assets/css/category.css" />
         <link rel="stylesheet" href="./assets/css/productdetail.css" />
         <link rel="stylesheet" href="./assets/css/checkout.css" />
+        <link rel="stylesheet" href="./assets/css/receipt.css">
+
 
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -129,7 +131,7 @@
                                         class="header__navbar-icon fa fa-shopping-bag"
                                         aria-hidden="true"
                                         ></i>
-                                    <a href="" class="header__navbar-item-link">
+                                    <a href="/RloyalPRJ/cart" class="header__navbar-item-link">
                                         Shopping bags
                                     </a>
                                 </li>
@@ -147,7 +149,7 @@
                     </nav>
                     <div class="header-with-logo">
                         <div class="header__logo">
-                            <a href="index.html"
+                            <a href="/RloyalPRJ/home"
                                ><img
                                     src="./assets/images/logodai.png"
                                     class="header__logo-img"

@@ -9,6 +9,7 @@ import Model.ProductDetail;
 import Model.ProductImg;
 import Model.Product_Category;
 import Model.Product_collection;
+import Model.Receipt;
 import Model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -173,112 +174,219 @@ public class DAO extends DBContext {
         }
     }
 
-  public ProductDetail getProductDetailById(int id) {
+    public ProductDetail getProductDetailById(int id) {
         ProductDetail p = null;
         String sql = "SELECT * FROM PRODUCT_INFO WHERE product_id=? ";
         try {
             PreparedStatement st = con.prepareStatement(sql);
-            st.setInt(1,id);
+            st.setInt(1, id);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-               p = new ProductDetail(rs.getInt(1), 
-                       rs.getString(2), 
-                       rs.getString(3), 
-                       rs.getString(4), 
-                       rs.getString(5), 
-                       rs.getString(6), 
-                       rs.getString(7), 
-                       rs.getString(8), 
-                       rs.getString(9), 
-                       rs.getString(10), 
-                       rs.getString(11), 
-                       rs.getString(12), 
-                       rs.getInt(13), 
-                       rs.getString(14), 
-                       rs.getString(15));
+                p = new ProductDetail(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getInt(13),
+                        rs.getString(14),
+                        rs.getString(15));
             }
         } catch (SQLException e) {
             System.out.println(e.getCause());
         }
         return p;
     }
-  public ProductImg getOneProduct_img(int product_info_id) {
-      ProductImg link = null;
-      String sql = "SELECT TOP 1 * FROM PRODUCT_IMG WHERE PRODUCT_ID=?";
-      try {
-          PreparedStatement st = con.prepareStatement(sql);
-          st.setInt(1, product_info_id);
-          ResultSet rs = st.executeQuery();
-          while(rs.next()) {
-              link = new ProductImg(rs.getInt(1), rs.getString(2), rs.getInt(3));
-          }
-      } catch (SQLException e) {
-          e.printStackTrace();
-      }
-      return  link;
-  }
-  public List<String> getProduct_img(int product_info_id) {
-      List<String> link = new ArrayList<>();
-      String sql = "SELECT img_link FROM PRODUCT_IMG WHERE PRODUCT_ID=?";
-      try {
-          PreparedStatement st = con.prepareStatement(sql);
-          st.setInt(1, product_info_id);
-          ResultSet rs = st.executeQuery();
-          while(rs.next()) {
-              link.add(rs.getString(1));
-          }
-      } catch (SQLException e) {
-          e.printStackTrace();
-      }
-      return  link;
-  } 
-  public List<ProductImg> getAllProduct_img () {
-      List<ProductImg> list = new ArrayList<>();
-      String sql = "SELECT  * from product_img ";
-      ProductImg pm = null;
-      try {
-          PreparedStatement st = con.prepareStatement(sql);
-          ResultSet rs = st.executeQuery();
-          while (rs.next()) {
-              list.add(new ProductImg(rs.getInt(1), rs.getString(2), rs.getInt(3)));
-          }
-      } catch(SQLException e) {
-          e.printStackTrace();
-      }
-      return list;
-  }
-  public List<ProductDetail> getAllProductDetails() {
-      List<ProductDetail> pList = new ArrayList<>();
-      String sql = "SELECT * FROM PRODUCT_INFO";
-      try {
-          PreparedStatement st = con.prepareStatement(sql);
-          ResultSet rs = st.executeQuery();
-          while(rs.next()) {
-              pList.add(new ProductDetail(rs.getInt(1), 
-                       rs.getString(2), 
-                       rs.getString(3), 
-                       rs.getString(4), 
-                       rs.getString(5), 
-                       rs.getString(6), 
-                       rs.getString(7), 
-                       rs.getString(8), 
-                       rs.getString(9), 
-                       rs.getString(10), 
-                       rs.getString(11), 
-                       rs.getString(12), 
-                       rs.getInt(13), 
-                       rs.getString(14), 
-                       rs.getString(15))
-              );
-            
-          }
-      } catch (SQLException e) {
-          e.printStackTrace();
-      }
-      return  pList;
-  } 
+
+    public ProductImg getOneProduct_img(int product_info_id) {
+        ProductImg link = null;
+        String sql = "SELECT TOP 1 * FROM PRODUCT_IMG WHERE PRODUCT_ID=?";
+        try {
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setInt(1, product_info_id);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                link = new ProductImg(rs.getInt(1), rs.getString(2), rs.getInt(3));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return link;
+    }
+
+    public List<String> getProduct_img(int product_info_id) {
+        List<String> link = new ArrayList<>();
+        String sql = "SELECT img_link FROM PRODUCT_IMG WHERE PRODUCT_ID=?";
+        try {
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setInt(1, product_info_id);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                link.add(rs.getString(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return link;
+    }
+
+    public List<ProductImg> getAllProduct_img() {
+        List<ProductImg> list = new ArrayList<>();
+        String sql = "SELECT  * from product_img ";
+        ProductImg pm = null;
+        try {
+            PreparedStatement st = con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                list.add(new ProductImg(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<ProductDetail> getAllProductDetails() {
+        List<ProductDetail> pList = new ArrayList<>();
+        String sql = "SELECT * FROM PRODUCT_INFO";
+        try {
+            PreparedStatement st = con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                pList.add(new ProductDetail(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getInt(13),
+                        rs.getString(14),
+                        rs.getString(15))
+                );
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return pList;
+    }
+
+    public boolean Payment_insert(int user_id,
+            String full_name, String email,
+            String address, String city,
+            String phone_number, String state,
+            int zip_code, int amount,
+            String status) {
+        PreparedStatement stmt = null;
+        int c = 0;
+        try {
+            // Sử dụng câu lệnh SQL với OUTPUT INSERTED.id
+            String sql = "insert into payment_details (user_id, full_name, email, address, city, phone_number, state, zipcode, amount, status) values(?,?,?,?,?,?,?,?,?,?)";
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, user_id);
+            stmt.setString(2, full_name);
+            stmt.setString(3, email);
+            stmt.setString(4, address);
+            stmt.setString(5, city);
+            stmt.setString(6, phone_number);
+            stmt.setString(7, state);
+            stmt.setInt(8, zip_code);
+            stmt.setInt(9, amount);
+            stmt.setString(10, status);
+
+            // Sử dụng executeQuery để lấy ResultSet trả về
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                c++;
+            }
+            return c > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Receipt getMaxPaymentId() {
+        Receipt rec = null;
+        String sql = "SELECT TOP 1 * FROM PAYMENT_DETAILS ORDER BY ID DESC";
+        try {
+            PreparedStatement st = con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                rec = new Receipt(rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getInt(9),
+                        rs.getInt(10),
+                        rs.getString(11),
+                        rs.getDate(12));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rec;
+    }
+
+    public boolean Order_insert(int product_id, int quantity, int payment_id) {
+        PreparedStatement stmt = null;
+        int c = 0;
+        try {
+            // Sử dụng câu lệnh SQL với OUTPUT INSERTED.id
+            String sql = "insert into order_items (product_id, quantity, payment_id) values(?,?,?)";
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, product_id);
+            stmt.setInt(2, quantity);
+            stmt.setInt(3, payment_id);
+
+            // Sử dụng executeQuery để lấy ResultSet trả về
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                c++;
+            }
+            return c > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean Update_status(String status, int id) {
+        PreparedStatement stmt = null;
+        try {
+            // Sử dụng câu lệnh SQL với OUTPUT INSERTED.id
+            String sql = "UPDATE PAYMENT_DETAILS SET STATUS=? WHERE ID=?";
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1, status);
+            stmt.setInt(2, id);
+            int rowUpdate = stmt.executeUpdate();
+            return rowUpdate > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
     public static void main(String[] args) {
         DAO d = new DAO();
-        
+        System.out.println(d.getMaxPaymentId());
+
     }
 }
