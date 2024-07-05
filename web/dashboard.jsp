@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,400,0,0"
     />
-    <link rel="stylesheet" href="E:\projectprj301\web\assets\css\dashboardpage.css" />
+    <link rel="stylesheet" href="./assets/css/dashboardpage.css" />
   </head>
   <body>
     <div class="container">
@@ -82,6 +82,7 @@
               <div class="left">
                 <h3>Total Sales</h3>
                 <h1>$100.000</h1>
+                
               </div>
               <div class="progress">
                 <svg>
