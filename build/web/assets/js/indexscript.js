@@ -39,3 +39,28 @@ function hideSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.style.display = "none";
 }
+
+let thumbnails = document.getElementsByClassName("product__detail-thumbnail");
+let activeImages = document.getElementsByClassName("active");
+
+for (var i = 0; i < thumbnails.length; i++) {
+  thumbnails[i].addEventListener("mouseover", function () {
+    if (activeImages.length > 0) {
+      activeImages[0].classList.remove("active");
+    }
+    this.classList.add("active");
+    document.getElementById("featured").src = this.src;
+  });
+}
+
+let buttonRight = document.getElementById("slideRight");
+let buttonLeft = document.getElementById("slideLeft");
+let slider = document.querySelector(".product__detail-slider");
+
+buttonLeft.addEventListener("click", function () {
+  slider.scrollLeft -= 180;
+});
+
+buttonRight.addEventListener("click", function () {
+  slider.scrollLeft += 180;
+});

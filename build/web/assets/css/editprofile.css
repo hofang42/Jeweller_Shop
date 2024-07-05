@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+}
+nav {
+  text-align: center;
+  margin-bottom: 20px;
+}
+nav a {
+  color: #666;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+.column {
+  width: 48%;
+}
+.field {
+  margin-bottom: 15px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #666;
+}
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.shaded {
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+.date-fields,
+.anniversary-fields {
+  display: flex;
+  justify-content: space-between;
+}
+.date-fields select,
+.anniversary-fields select {
+  width: 30%;
+}
+.example {
+  font-size: 12px;
+  color: #999;
+}
