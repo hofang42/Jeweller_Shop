@@ -578,15 +578,15 @@ public class DAO extends DBContext {
         return cList;
     }
 
-      public List<PaymentInfo> getPaymentDetails(int userId) {
+    public List<PaymentInfo> getPaymentDetails(int userId) {
         List<PaymentInfo> paymentInfos = new ArrayList<>();
 
         try {
-            String query = "SELECT p.product_name, p.product_id, pd.amount, pd.status " +
-                           "FROM product p " +
-                           "JOIN order_items oi ON p.product_id = oi.product_id " +
-                           "JOIN payment_details pd ON oi.payment_id = pd.id " +
-                           "WHERE pd.user_id = ?";
+            String query = "SELECT p.product_name, p.product_id, pd.amount, pd.status "
+                    + "FROM product p "
+                    + "JOIN order_items oi ON p.product_id = oi.product_id "
+                    + "JOIN payment_details pd ON oi.payment_id = pd.id "
+                    + "WHERE pd.user_id = ?";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
@@ -605,6 +605,35 @@ public class DAO extends DBContext {
 
         return paymentInfos;
     }
+
+    public List<PaymentInfo> getPaymentDetailsByGoogleId(int userId) {
+        List<PaymentInfo> paymentInfos = new ArrayList<>();
+
+        try {
+            String query = "SELECT p.product_name, p.product_id, pd.amount, pd.status "
+                    + "FROM product p "
+                    + "JOIN order_items oi ON p.product_id = oi.product_id "
+                    + "JOIN payment_details pd ON oi.payment_id = pd.id "
+                    + "WHERE pd.user_google_id= ?";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, userId);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                PaymentInfo paymentInfo = new PaymentInfo();
+                paymentInfo.setProductName(rs.getString("product_name"));
+                paymentInfo.setProductId(rs.getInt("product_id"));
+                paymentInfo.setAmount(rs.getInt("amount"));
+                paymentInfo.setStatus(rs.getString("status"));
+                paymentInfos.add(paymentInfo);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return paymentInfos;
+    }
+
     public static void main(String[] args) {
         DAO d = new DAO();
 //        d.Payment_insert_google("1", "Tran Van Hoang Phuc", "vacpro66@gmail.com", "abc", "Da Nang", "0983028278", "Hoa Hai", 12, 1000, "Success");

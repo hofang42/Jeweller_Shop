@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.oracle.wls.shaded.org.apache.xml.utils.Constants;
 import jakarta.servlet.http.HttpSession;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.fluent.Request;

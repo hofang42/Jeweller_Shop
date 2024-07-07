@@ -49,25 +49,25 @@ public class DashboardServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String userIdStr = (String) session.getAttribute("userId");
-
-        if (userIdStr == null) {
-            response.sendRedirect("login.jsp");
-            return;
-        }
-
-        int userId = Integer.parseInt(userIdStr);
-
+        String userIdRaw = request.getParameter("uId");
+         List<PaymentInfo> paymentInfos = null;
         try {
             DAO dao = new DAO();
+            if (session.getAttribute("acc") != null) {
+                int userId = Integer.parseInt(userIdRaw);
+                paymentInfos = dao.getPaymentDetails(userId);
 
-            List<PaymentInfo> paymentInfos = dao.getPaymentDetails(userId);
+            } else if (session.getAttribute("accGoogle") != null) {
+                int userId = Integer.parseInt(userIdRaw);
+                paymentInfos = dao.getPaymentDetailsByGoogleId(userId);
+
+            }
             request.setAttribute("paymentInfos", paymentInfos);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
+        request.getRequestDispatcher("dashboard.jsp").forward(request, response);
     }
 
 }

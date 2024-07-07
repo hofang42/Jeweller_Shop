@@ -68,7 +68,7 @@ public class LoadmoreServlet extends HttpServlet {
                         + "                            <span class=\"product_price_num\">đ165,000,000</span>\n"
                         + "                            <span class=\"product_price_taxes\">Including Taxes</span>\n"
                         + "                        </p>\n"
-                        + "                        <a href=\"/RloyalPRJ/productDetail?pId=${product.product_id}\" class=\"product_discover_more\">DISCOVER MORE</a>                   \n"
+                        + "                        <a href=\"/RloyalPRJ/productDetail?pId=" + p.getProduct_id() + "\" class=\"product_discover_more\">DISCOVER MORE</a>                   \n"
                         + "                    </div>\n"
                         + "                </div>");
             } else {

@@ -142,7 +142,7 @@
                                 </li>
                                 <c:if test="${sessionScope.acc.isAdmin == 1}">
                                     <li class="header__navbar-item">
-                                        <a href="/RloyalPRJ/admin" class="header__navbar-item-link">Admin</a>
+                                        <a href="/RloyalPRJ/DashboardServlet?uId=${sessionScope.acc.user_id}${sessionScope.accGoogle.id}" class="header__navbar-item-link">Admin</a>
                                     </li>
                                 </c:if>
                             </ul>
