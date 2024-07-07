@@ -4,6 +4,7 @@
  */
 package JDBC;
 
+import Model.PaymentInfo;
 import Model.Product;
 import Model.ProductDetail;
 import Model.ProductImg;
@@ -11,14 +12,11 @@ import Model.Product_Category;
 import Model.Product_collection;
 import Model.Receipt;
 import Model.User;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -563,7 +561,7 @@ public class DAO extends DBContext {
         }
         return cList;
     }
-    
+
     public List<Product> getProductByCategoryName(String cId) {
         List<Product> cList = new ArrayList<>();
         String sql = "SELECT * FROM PRODUCT WHERE product_category_id = (SELECT product_category_id FROM PRODUCT_CATEGORY WHERE PRODUCT_CATEGORY_NAME = ?)";
@@ -579,8 +577,37 @@ public class DAO extends DBContext {
         }
         return cList;
     }
+
+      public List<PaymentInfo> getPaymentDetails(int userId) {
+        List<PaymentInfo> paymentInfos = new ArrayList<>();
+
+        try {
+            String query = "SELECT p.product_name, p.product_id, pd.amount, pd.status " +
+                           "FROM product p " +
+                           "JOIN order_items oi ON p.product_id = oi.product_id " +
+                           "JOIN payment_details pd ON oi.payment_id = pd.id " +
+                           "WHERE pd.user_id = ?";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, userId);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                PaymentInfo paymentInfo = new PaymentInfo();
+                paymentInfo.setProductName(rs.getString("product_name"));
+                paymentInfo.setProductId(rs.getInt("product_id"));
+                paymentInfo.setAmount(rs.getInt("amount"));
+                paymentInfo.setStatus(rs.getString("status"));
+                paymentInfos.add(paymentInfo);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return paymentInfos;
+    }
     public static void main(String[] args) {
         DAO d = new DAO();
-        d.Payment_insert_google("1", "Tran Van Hoang Phuc", "vacpro66@gmail.com", "abc", "Da Nang", "0983028278","Hoa Hai" ,12, 1000, "Success");
+//        d.Payment_insert_google("1", "Tran Van Hoang Phuc", "vacpro66@gmail.com", "abc", "Da Nang", "0983028278", "Hoa Hai", 12, 1000, "Success");
+        System.out.println(d.getUser("hwangphuc76", "na290604").toString());
     }
 }
