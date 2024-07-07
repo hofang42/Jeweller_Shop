@@ -581,6 +581,6 @@ public class DAO extends DBContext {
     }
     public static void main(String[] args) {
         DAO d = new DAO();
-        d.Payment_insert_google("1", "Tran Van Hoang Phuc", "vacpro66@gmail.com", "abc", "Da Nang", "0983028278","Hoa Hai" ,12, 1000, "Success");
+        d.Payment_insert_google("2", "Phan Le Thanh Hoang", "ringhost@gmail.com", "abc", "Da Nang", "0836112233","Hoa Hai" ,12, 1000, "Success");
     }
 }
