@@ -72,14 +72,14 @@
   justify-content: center;
 }
 .btn-add-cart {
-  width: 45rem;
+  width: 30rem;
   height: 5rem;
   background-color: var(--black-color);
   color: var(--white-color);
   font-size: 20px;
   font-family: "Sedan SC", serif;
   border-radius: 5px;
-  margin: 20px 0;
+  margin: 20px 20px;
 }
 
 .benefit {
