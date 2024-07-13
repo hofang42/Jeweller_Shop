@@ -87,8 +87,8 @@ create table Product_Info(
 	foreign key (product_id) references Product(product_id) 
 )
 
-alter table product_info
-add product_name nvarchar(100)
+alter table user_web
+add created_at date default getdate()
 drop table user_web
 create table user_web(
 	user_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -97,10 +97,10 @@ create table user_web(
 	user_email varchar(255) CONSTRAINT chk_email CHECK (user_email LIKE '%_@_%._%'),
 	password VARCHAR(255) NOT NULL,
     CONSTRAINT chk_password CHECK (LEN(password) >= 8),
-	user_realname nvarchar(100) not null,
-	isUser int,
-	isAdmin int,
-	created_at date,
+	user_firstname nvarchar(50) not null,
+	user_lastname nvarchar(50) not null,
+	isAdmin int not null,
+	created_at date default getdate(),
 )
 
 INSERT INTO Product_Category ( product_category_parent_id, product_category_name) VALUES
@@ -234,4 +234,13 @@ create table payment_details(
 	created_at date default getdate(),
 	foreign key (user_id) references user_web(user_id)
 )
-insert into payment_details (user_id, full_name, email, address, city, phone_number, state, zipcode, amount, status) values
+
+create table user_google_login(
+	google_id nvarchar(255) primary key,
+	user_fullname nvarchar(50),
+	user_firstname nvarchar(50),
+	user_lastname nvarchar(50),
+	user_phone nvarchar(15)  CONSTRAINT phone CHECK (user_phone LIKE '[0-9]%'),
+	user_email nvarchar(255) CONSTRAINT email CHECK (user_email LIKE '%_@_%._%'),
+	created_at date default getdate()
+)

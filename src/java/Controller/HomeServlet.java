@@ -75,7 +75,7 @@ public class HomeServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         for (Product_Category p : list) {
             out.println("<li class=\"card-info\" id=\"category_detail_${status.index}\">\n"
-                    + "                            <a href=\"#\" class=\"card-link\">\n"
+                    + "                            <a href=\"/RloyalPRJ/product?cId=" + p.getProduct_category_id() + "\" class=\"card-link\">\n"
                     + "                                <!-- <img\n"
                     + "                                  src=\"./assets/images/logongan.png\"\n"
                     + "                                  alt=\"\"\n"

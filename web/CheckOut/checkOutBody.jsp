@@ -43,7 +43,7 @@
                         <h3 class="title">DELIVERY ADDRESSs</h3>
                         <div class="input-box">
                             <span>Full Name :</span>
-                            <input type="hidden" name="user_id" value="${sessionScope.acc.user_id}">
+                            <input type="hidden" name="user_id" value="${sessionScope.acc.user_id}${sessionScope.accGoogle.id}">
                             <input type="text" name="full_name" placeholder="Tran Van Hoang Phuc" required="The field is required." />
                         </div>
                         <div class="input-box">

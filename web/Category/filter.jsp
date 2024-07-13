@@ -17,19 +17,19 @@
         </div>
 
         <div class="body_head_sec_3">
-            <button onclick="location.href = 'index.html';">Bracelets</button>
+            <button onclick="location.href = '/RloyalPRJ/filter?name=Bracelets';">Bracelets</button>
 
-            <button onclick="location.href = 'index.html';">Cufflinks</button>
+            <button onclick="location.href = '/RloyalPRJ/filter?name=Cufflinks';">Cufflinks</button>
 
-            <button onclick="location.href = 'index.html';">Earrings</button>
+            <button onclick="location.href = '/RloyalPRJ/filter?name=Earrings';">Earrings</button>
 
-            <button onclick="location.href = 'index.html';">Necklaces</button>
+            <button onclick="location.href = '/RloyalPRJ/filter?name=Necklaces';">Necklaces</button>
 
-            <button onclick="location.href = 'index.html';">Pendants</button>
+            <button onclick="location.href = '/RloyalPRJ/filter?name=Pendants';">Pendants</button>
 
-            <button onclick="location.href = 'index.html';">Rings</button>
+            <button onclick="location.href = '/RloyalPRJ/filter?name=Rings';">Rings</button>
 
-            <button onclick="location.href = 'index.html';">Wedding Rings</button>
+            <button onclick="location.href = '/RloyalPRJ/filter?name=Wedding Rings';">Wedding Rings</button>
         </div>
 
         <div class="body_head_sec_4">
@@ -39,13 +39,13 @@
 
             <div class="body_head_sec_4_B">
                 <label for="">Sort by: </label>
-                <select name="" id="">
-                    <option value="">None</option>
-                    <option value="">Recommended</option>
-                    <option value="">Best seller</option>
-                    <option value="">Price High to Low</option>
-                    <option value="">Price Low to High</option>
-                    <option value="">New Arrivals</option>
+                <select name="" id="Filter" onchange="GetFilter()">
+                    <option value="None">None</option>
+                    <option value="Recommended">Recommended</option>
+                    <option value="Best seller">Best seller</option>
+                    <option value="Price High to Low">Price High to Low</option>
+                    <option value="Price Low to High">Price Low to High</option>
+                    <option value="New Arrivals">New Arrivals</option>
                 </select>
             </div>
         </div>

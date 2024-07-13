@@ -34,6 +34,7 @@ public class LogoutServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         session.removeAttribute("acc");
+        session.removeAttribute("accGoogle");
         response.sendRedirect("/RloyalPRJ/home");
         
     }

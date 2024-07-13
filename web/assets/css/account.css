@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.account-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 30px;
+}
+
+.account-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.account-section > div {
+  flex: 0 0 48%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-top: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
+.account-section h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-section p {
+  margin: 5px 0;
+}
+
+.account-section a {
+  text-decoration: none;
+  color: #999;
+  text-decoration: underline;
+}
+
+.account-section a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .account-section > div {
+    flex: 0 0 100%;
+  }
+}

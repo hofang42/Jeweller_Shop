@@ -62,8 +62,20 @@ public class ListProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         DAO d = new DAO();
+         List<Product> pList = null;
         List<Product_Category> cList = d.getAllCategoryNoParents();
-        List<Product> pList = d.getAllProduct();
+        String cId = request.getParameter("cId"), clId = request.getParameter("clId");
+        if (cId == null && clId == null) {
+            pList = d.getAllProduct();
+
+        } else if (cId != null) {
+            pList = d.getAllProductByCategoryId(Integer.parseInt(cId));
+        } else {
+            pList = d.getAllProductByCollectionId(Integer.parseInt(clId));
+        }
+        for (Product p : pList) {
+            System.out.println(p);
+        }
         request.setAttribute("product", pList);
         request.setAttribute("data", cList);
         request.getRequestDispatcher("Category.jsp").forward(request, response);

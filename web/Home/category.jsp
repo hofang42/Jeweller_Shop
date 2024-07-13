@@ -18,9 +18,9 @@
 
 
 <c:forEach items="${data}" var="category" varStatus="status" >
-    <li class="header__dropdown-item hideOnMobile" onmouseover="GetId(${status.index}); GetIdForCollection(${status.index})">
+    <li class="header__dropdown-item hideOnMobile">
+        <div onmouseover="GetId(${status.index}); GetIdForCollection(${status.index})">${category.product_category_name}</div>
         <input type="hidden" id="category_${status.index}" value="${category.product_category_id}">
-        ${category.product_category_name} 
         <div class="header__dropdown--info">
             <div class="header__downdown--category">
                 <div class="dropdown-title">

@@ -28,18 +28,17 @@ ALTER TABLE product_info
 ADD original_price nvarchar(50);
 
 
-insert into user_web (user_name, user_phone, user_email, password, user_realname, isUser, isAdmin) values
-('hwangphuc76', '0983028278', 'vacpro66@gmail.com', 'na290604', 'Tran Van Hoang Phuc', 1, 0),
-('hoangphuc', '0905536131', 'phuctvhde180493@gmail.com', 'na290604', 'Hoang Phuc Tran Van', 0, 1)
+insert into user_web (user_name, user_phone, user_email, password, isAdmin, user_firstname, user_lastname, user_fullname) values
+('hwangphuc76', '0983028278', 'vacpro66@gmail.com', 'na290604', 1, 'Tran Van', 'Hoang Phuc', 'Tran Van Hoang Phuc'),
 
 insert into Product_Info (product_name, product_small_desc, product_full_desc, material, gemstone, size, resizeable, pendant, diamond, olfactive_family, colour, original_price , sale_price, product_id)
 values ('B.ZERO1 NECKLACE', 'B.zero1 18 kt yellow gold mini pendant necklace with chain', 'Drawing its inspiration from the world’s most renowned amphitheatre, the Colosseum, the B.zero1 18 kt yellow gold chain necklace is a groundbreaking statement of Bvlgari’s daring',
-'Yellow gold', 'No Gemstones', null, null, null, null, null, null, '53,400,000', null, 27),
+'Yellow gold', 'No Gemstones', null, null, null, null, null, null, 53400000, null, 27),
 ('Serpenti Viper Ring', 'Serpenti Viper 18 kt rose gold single-spiral ring set with demi pavé diamonds', 'With its signature blend of pure aesthetics, enveloping shapes and charismatic flair, the Serpenti Viper 18 kt rose gold single-spiral ring with demi pavé diamonds is an essential interpretation of Bvlgari’s icon of endless metamorphosis. Capturing the powerful and ever-evolving nature of the mythical serpent, the magnetic jewellery creation inspires us to embrace change as a source of strength and self-confidence. Easy to mix and match, the ring offers endless styling options, embodying the collection’s versatile spirit.
-Serpenti Viper ring in 18 kt rose gold with demi pavé', 'Rose gold', 'Diamonds', null, null, null, '0.14', null, null, '95,600,000', null, 2)
+Serpenti Viper ring in 18 kt rose gold with demi pavé', 'Rose gold', 'Diamonds', null, null, null, '0.14', null, null, 95600000, null, 2)
 
 insert into product_img (img_link, product_id)
 values ('1375629.avif', 27), ('1375631.avif', 27), ('1448222 (1).avif', 27), ('1448274.png', 27), ('1544336.avif', 27),
 ('1529968.avif', 2), ('1529988.avif', 2), ('1530522.avif', 2)
 delete from Product_img
-
+delete from Product_Info

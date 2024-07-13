@@ -98,6 +98,10 @@ public class BuyServlet extends HttpServlet {
                 }
             }
         }
+        if (txt == "") {
+            response.sendRedirect("/RloyalPRJ/home");
+            return;
+        }
         Cart c = null;
         String[] s = txt.split("\\.");
         for (String a : s) {

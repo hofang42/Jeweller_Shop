@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="./assets/css/productdetail.css" />
         <link rel="stylesheet" href="./assets/css/checkout.css" />
         <link rel="stylesheet" href="./assets/css/receipt.css">
+        <link rel="stylesheet" href="./assets/css/account.css">
 
 
 
@@ -106,26 +107,26 @@
                                   >Sign up</a
                                 >
                               </li> -->
-                                <c:if test="${sessionScope.acc == null}">
+                                <c:if test="${sessionScope.acc == null && sessionScope.accGoogle == null}">
                                     <li class="header__navbar-item">
                                         <a href="/RloyalPRJ/login" class="header__navbar-item-link">
                                             Login
                                         </a> 
                                     </li>
                                 </c:if>
-                                <c:if test="${sessionScope.acc != null}">
+                                <c:if test="${sessionScope.acc != null || sessionScope.accGoogle != null}">
                                     <li class="header__navbar-item header__navbar-user">
-                                        <span class="header__navbar-user-name">${sessionScope.acc.user_realname}</span>
+                                        <span class="header__navbar-user-name">${sessionScope.acc.user_fullname}${sessionScope.accGoogle.name}</span>
                                         <ul class="header__navbar-user-menu">
                                             <li class="header__navbar-user-item">
-                                                <a href="">My Account</a>
+                                                <a href="/RloyalPRJ/acc">My Account</a>
                                             </li>
                                             <li class="header__navbar-user-item">
                                                 <a href="/RloyalPRJ/logout">Log out</a>
                                             </li>
                                         </ul>
-                                    </c:if>
-                                </li>
+                                    </li>
+                                </c:if>
                                 <li class="header__navbar-item">
                                     <i
                                         class="header__navbar-icon fa fa-shopping-bag"
@@ -141,7 +142,7 @@
                                 </li>
                                 <c:if test="${sessionScope.acc.isAdmin == 1}">
                                     <li class="header__navbar-item">
-                                        <a href="/RloyalPRJ/admin" class="header__navbar-item-link">Admin</a>
+                                        <a href="/RloyalPRJ/dashboard?uId=${sessionScope.acc.user_id}${sessionScope.accGoogle.id}" class="header__navbar-item-link">Admin</a>
                                     </li>
                                 </c:if>
                             </ul>

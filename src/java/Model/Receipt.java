@@ -16,8 +16,9 @@ public class Receipt {
    private int zipcode, amount;
    private String status;
    private Date created_at;
+   private String user_google_id;
 
-    public Receipt(int id, int user_id, String full_name, String email, String address, String city, String phone_number, String state, int zipcode, int amount, String status, Date created_at) {
+    public Receipt(int id, int user_id, String full_name, String email, String address, String city, String phone_number, String state, int zipcode, int amount, String status, Date created_at, String user_google_id) {
         this.id = id;
         this.user_id = user_id;
         this.full_name = full_name;
@@ -30,6 +31,7 @@ public class Receipt {
         this.amount = amount;
         this.status = status;
         this.created_at = created_at;
+        this.user_google_id = user_google_id;
     }
 
     public int getId() {
@@ -128,10 +130,18 @@ public class Receipt {
         this.created_at = created_at;
     }
 
+    public String getUser_google_id() {
+        return user_google_id;
+    }
+
+    public void setUser_google_id(String user_google_id) {
+        this.user_google_id = user_google_id;
+    }
+
     @Override
     public String toString() {
-        return "Receipt{" + "id=" + id + ", user_id=" + user_id + ", full_name=" + full_name + ", email=" + email + ", address=" + address + ", city=" + city + ", phone_number=" + phone_number + ", state=" + state + ", zipcode=" + zipcode + ", amount=" + amount + ", status=" + status + ", created_at=" + created_at + '}';
+        return "Receipt{" + "id=" + id + ", user_id=" + user_id + ", full_name=" + full_name + ", email=" + email + ", address=" + address + ", city=" + city + ", phone_number=" + phone_number + ", state=" + state + ", zipcode=" + zipcode + ", amount=" + amount + ", status=" + status + ", created_at=" + created_at + ", user_google_id=" + user_google_id + '}';
     }
-   
-   
+
+  
 }

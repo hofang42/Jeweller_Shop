@@ -53,7 +53,7 @@
             </div>
             <div class="product__detail-price">
                 <div>
-                    <span class="shoppable-price">đ ${product.original_price}</span>
+                    <span class="shoppable-price">đ ${product.price}</span>
                 </div>
                 <div>
                     <span class="tax">Including Taxes</span>

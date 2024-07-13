@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/buy.jsp</url-pattern>
+        <url-pattern>/buy</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>ajaxServlet</servlet-name>
         <servlet-class>com.vnpay.common.ajaxServlet</servlet-class>
@@ -33,4 +34,8 @@
         <servlet-name>vnpayRefund</servlet-name>
         <url-pattern>/vnpayrefund/*</url-pattern>
     </servlet-mapping>
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>filter.LoginFilter</filter-class>
+    </filter>
 </web-app>

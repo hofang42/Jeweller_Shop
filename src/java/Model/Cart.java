@@ -81,8 +81,7 @@ public class Cart {
                     int size = Integer.parseInt(n[1]);
                     ProductDetail p = getProductById(id, list);
                     ProductImg pm = getImgById(id, img_list);
-                    String price = p.getOriginal_price().replaceAll(",", "");
-                    int oPrice = Integer.parseInt(price);
+                    int oPrice = p.getOriginal_price();
                     CartItem t = new CartItem(pm, p, size, oPrice);
                     t.setQuantity(1);
                     addItem(t);

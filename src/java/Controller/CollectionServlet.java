@@ -81,7 +81,7 @@ public class CollectionServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         for (Product_collection p : sList) {
             out.println(" <li class=\"card-info-collection\" id=\"collection_${status.index}\">\n"
-                    + "                            <a href=\"#\" class=\"card-link\">\n"
+                    + "                            <a href=\"/RloyalPRJ/product?clId=" + p.getProduct_collection_id() + "\" class=\"card-link\">\n"
                     + "                                <img\n"
                     + "                                    src=\"./img/" + p.getImage() + "\"\n"
                     + "                                    alt=\"\"\n"

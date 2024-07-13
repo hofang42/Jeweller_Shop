@@ -17,6 +17,7 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
@@ -82,6 +83,7 @@ public class CheckOutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         DAO d = new DAO();
+        HttpSession session = request.getSession();
         String direct = request.getParameter("direct"),
                 vnpay = request.getParameter("vnpay"),
                 full_name = request.getParameter("full_name"),
@@ -109,7 +111,13 @@ public class CheckOutServlet extends HttpServlet {
         String confirm = request.getParameter("status");
         if (direct != null) {
             String total = totalRaw.replaceAll(",", "");
-            d.Payment_insert(Integer.parseInt(user_id), full_name, email, address, city, phone, state, Integer.parseInt(zip_code), Integer.parseInt(total), "Success");
+            if (session.getAttribute("acc") != null) {
+                d.Payment_insert(Integer.parseInt(user_id), full_name, email, address, city, phone, state, Integer.parseInt(zip_code), Integer.parseInt(total), "Success");
+
+            } else if (session.getAttribute("accGoogle") != null) {
+                d.Payment_insert_google(user_id, full_name, email, address, city, phone, state, Integer.parseInt(zip_code), Integer.parseInt(total), "Success");
+
+            }
             for (CartItem c : cList) {
                 d.Order_insert(c.getProduct().getProduct_id(), c.getQuantity(), d.getMaxPaymentId().getId());
             }
@@ -129,7 +137,13 @@ public class CheckOutServlet extends HttpServlet {
             if (confirm == null) {
                 System.out.println(totalRaw);
                 String total = totalRaw.replaceAll(",", "");
-                d.Payment_insert(Integer.parseInt(user_id), full_name, email, address, city, phone, state, Integer.parseInt(zip_code), Integer.parseInt(total), "failed");
+                if (session.getAttribute("acc") != null) {
+                    d.Payment_insert(Integer.parseInt(user_id), full_name, email, address, city, phone, state, Integer.parseInt(zip_code), Integer.parseInt(total), "failed");
+
+                } else if (session.getAttribute("accGoogle") != null) {
+                    d.Payment_insert_google(user_id, full_name, email, address, city, phone, state, Integer.parseInt(zip_code), Integer.parseInt(total), "failed");
+
+                }
                 for (CartItem c : cList) {
                     d.Order_insert(c.getProduct().getProduct_id(), c.getQuantity(), d.getMaxPaymentId().getId());
                 }

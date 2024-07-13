@@ -15,11 +15,9 @@
             <div class="item_container">
                 <c:forEach items="${cart}" var="data" varStatus="status">
                     <div class="item_1_container">
-                        <form action="/RloyalPRJ/remove" method="post">
                             <div class="remove_button">
                                 <a href="/RloyalPRJ/remove?rId=${data.product.product_id}">Remove</a>
                             </div>
-                        </form>
                         <div class="item_1_info">
 
                             <div class="item_1_img_name">
@@ -61,7 +59,7 @@
                     <input type="hidden" id="price" name="total_Money" value="${price}">
                     <div class="total_money" id="totalMoney">${price}</div>
                 </div>
-                <input type="submit" class="check_out_button" name="checkout" value="CHECK OUT">
+                <button class="check_out_button" type="submit">CHECK OUT</button>
                 <button class="continue_button">CONTINUE SHOPPING</button>
             </div>
         </div>

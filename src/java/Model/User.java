@@ -12,19 +12,21 @@ import java.util.Date;
  */
 public class User {
     public int user_id;
-    public String user_name, user_phone, user_email, password, user_realname;
-    public int isAdmin, isUser;
+    public String user_name, user_phone, user_email, password, user_firstname, user_lastname, user_fullname;
+    public int isAdmin;
     public Date created_at;
 
-    public User(int user_id, String user_name, String user_phone, String user_email, String password, String user_realname, int isAdmin, int isUser) {
+    public User(int user_id, String user_name, String user_phone, String user_email, String password, String user_firstname, String user_lastname, String user_fullname, int isAdmin, Date created_at) {
         this.user_id = user_id;
         this.user_name = user_name;
         this.user_phone = user_phone;
         this.user_email = user_email;
         this.password = password;
-        this.user_realname = user_realname;
+        this.user_firstname = user_firstname;
+        this.user_lastname = user_lastname;
+        this.user_fullname = user_fullname;
         this.isAdmin = isAdmin;
-        this.isUser = isUser;
+        this.created_at = created_at;
     }
 
     public int getUser_id() {
@@ -67,12 +69,28 @@ public class User {
         this.password = password;
     }
 
-    public String getUser_realname() {
-        return user_realname;
+    public String getUser_firstname() {
+        return user_firstname;
     }
 
-    public void setUser_realname(String user_realname) {
-        this.user_realname = user_realname;
+    public void setUser_firstname(String user_firstname) {
+        this.user_firstname = user_firstname;
+    }
+
+    public String getUser_lastname() {
+        return user_lastname;
+    }
+
+    public void setUser_lastname(String user_lastname) {
+        this.user_lastname = user_lastname;
+    }
+
+    public String getUser_fullname() {
+        return user_fullname;
+    }
+
+    public void setUser_fullname(String user_fullname) {
+        this.user_fullname = user_fullname;
     }
 
     public int getIsAdmin() {
@@ -81,14 +99,6 @@ public class User {
 
     public void setIsAdmin(int isAdmin) {
         this.isAdmin = isAdmin;
-    }
-
-    public int getIsUser() {
-        return isUser;
-    }
-
-    public void setIsUser(int isUser) {
-        this.isUser = isUser;
     }
 
     public Date getCreated_at() {
@@ -101,10 +111,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "user_id=" + user_id + ", user_name=" + user_name + ", user_phone=" + user_phone + ", user_email=" + user_email + ", password=" + password + ", user_realname=" + user_realname + ", isAdmin=" + isAdmin + ", isUser=" + isUser + ", created_at=" + created_at + '}';
+        return "User{" + "user_id=" + user_id + ", user_name=" + user_name + ", user_phone=" + user_phone + ", user_email=" + user_email + ", password=" + password + ", user_firstname=" + user_firstname + ", user_lastname=" + user_lastname + ", user_fullname=" + user_fullname + ", isAdmin=" + isAdmin + ", created_at=" + created_at + '}';
     }
+
     
-     
-    
-        
 }

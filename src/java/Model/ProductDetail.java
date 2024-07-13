@@ -4,18 +4,23 @@
  */
 package Model;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author LENOVO
  */
 public class ProductDetail {
+
     private int product_info_id;
     private String product_name, material, gemstone, size, resizable, pendant, diamond, offactive_family,
-            colour, original_price, sale_price;
+            colour;
     private int product_id;
     private String product_full_desc, product_small_desc;
+    private int original_price, sale_price;
+    String price;
 
-    public ProductDetail(int product_info_id, String product_name, String material, String gemstone, String size, String resizable, String pendant, String diamond, String offactive_family, String colour, String original_price, String sale_price, int product_id, String product_full_desc, String product_small_desc) {
+    public ProductDetail(int product_info_id, String product_name, String material, String gemstone, String size, String resizable, String pendant, String diamond, String offactive_family, String colour, int product_id, String product_full_desc, String product_small_desc, int original_price, int sale_price) {
         this.product_info_id = product_info_id;
         this.product_name = product_name;
         this.material = material;
@@ -26,11 +31,11 @@ public class ProductDetail {
         this.diamond = diamond;
         this.offactive_family = offactive_family;
         this.colour = colour;
-        this.original_price = original_price;
-        this.sale_price = sale_price;
         this.product_id = product_id;
         this.product_full_desc = product_full_desc;
         this.product_small_desc = product_small_desc;
+        this.original_price = original_price;
+        this.sale_price = sale_price;
     }
 
     public int getProduct_info_id() {
@@ -113,19 +118,19 @@ public class ProductDetail {
         this.colour = colour;
     }
 
-    public String getOriginal_price() {
+    public int getOriginal_price() {
         return original_price;
     }
 
-    public void setOriginal_price(String original_price) {
+    public void setOriginal_price(int original_price) {
         this.original_price = original_price;
     }
 
-    public String getSale_price() {
+    public int getSale_price() {
         return sale_price;
     }
 
-    public void setSale_price(String sale_price) {
+    public void setSale_price(int sale_price) {
         this.sale_price = sale_price;
     }
 
@@ -153,11 +158,15 @@ public class ProductDetail {
         this.product_small_desc = product_small_desc;
     }
 
+    public String getPrice() {
+        DecimalFormat formatter = new DecimalFormat("#,###");
+        String pric = formatter.format(original_price);
+        return  pric;
+    }
+
     @Override
     public String toString() {
         return "ProductDetail{" + "product_info_id=" + product_info_id + ", product_name=" + product_name + ", material=" + material + ", gemstone=" + gemstone + ", size=" + size + ", resizable=" + resizable + ", pendant=" + pendant + ", diamond=" + diamond + ", offactive_family=" + offactive_family + ", colour=" + colour + ", original_price=" + original_price + ", sale_price=" + sale_price + ", product_id=" + product_id + ", product_full_desc=" + product_full_desc + ", product_small_desc=" + product_small_desc + '}';
     }
-    
-    
-    
+
 }

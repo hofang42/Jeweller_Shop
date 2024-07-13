@@ -305,6 +305,7 @@
         });
     }
 </script>
+
 <script type="text/javascript">
     function GetIdForCollection(index) {
         var category = document.getElementById("category_" + index).value;
@@ -322,6 +323,60 @@
 
     }
 </script>
+
+<script type="text/javascript">
+    function GetFilter() {
+        var category = document.getElementById("Filter").value;
+        $.ajax({
+            url: "/RloyalPRJ/filter",
+            type: "post",
+            data: {
+                cat: category
+            },
+            success: function (data) {
+                var row = document.getElementById("product");
+                row.innerHTML = data;
+            }
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    function LoadMore() {
+        var amount = document.getElementsByClassName("productItem").length;
+        $.ajax({
+            url: "/RloyalPRJ/loadmore",
+            type: "post",
+            data: {
+                amount: amount
+            },
+            success: function (data) {
+                var row = document.getElementById("product");
+                row.innerHTML += data;
+            }
+        });
+
+    }
+</script>
+
+<script type="text/javascript">
+    function Product_describe(index) {
+        var amount = document.getElementById("product_id_" + index).value;
+        $.ajax({
+            url: "/RloyalPRJ/describe",
+            type: "post",
+            data: {
+                amount: amount
+            },
+            success: function (data) {
+                var row = document.getElementById("product_describe_" + index);
+                row.innerHTML = data;
+            }
+        });
+
+    }
+</script>
+
 <script>
     function increase(index) {
         var numInput = document.getElementById("num_" + index);

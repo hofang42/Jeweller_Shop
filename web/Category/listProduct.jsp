@@ -9,16 +9,16 @@
 
 <div class="body_category">
     <div class="product_container">
-        <div class="product_container_row_1" style="width:70%; margin-left:15%">
+        <div class="product_container_row_1" id="product">
             <c:forEach items="${product}" var="product" varStatus="status">
-                <div class="category_product_1">
-                    <input type="hidden" id="product_${status.index}" value="${product_id}">
-                    <img
+                <input type="hidden" id="product_id_${status.index}" value="${product.product_id}">
+                <div class="productItem category_product_1" >
+                    <img onmouseover="Product_describe(${status.index})"
                         class="product_img"
-                        src="./product_img/${product.image}"
+                        src="./product_detail_img/${product.product_name}/${product.image}"
                         alt=""
                         />
-                    <div class="product_describe_overlay" id="product_detail_${status.index}">
+                    <div class="product_describe_overlay" id="product_describe_${status.index}">
                         <p class="product_name">
                             B.ZERO1 RING
                         </p>
@@ -28,7 +28,7 @@
                             <span class="product_material_type">Rose gold</span>
                         </p>
                         <p class="product_germstone">
-                            Germstone
+                            Gemstone
                             <br>
                             <span class="product_germstone_type">Diamond</span>
                         </p>
@@ -36,29 +36,13 @@
                             <span class="product_price_num">đ165,000,000</span>
                             <span class="product_price_taxes">Including Taxes</span>
                         </p>
-                        <a href="/RloyalPRJ/productDetail?pId=${product.product_id}" class="product_discover_more">DISCOVER MORE</a>                    </div>
+                        <a href="/RloyalPRJ/productDetail?pId=${product.product_id}" class="product_discover_more">DISCOVER MORE</a>                   
+                    </div>
                 </div>
             </c:forEach>
         </div>
         <input type="checkbox" name="" id="ch" />
-        <div class="product_container_row_2">
-            <div class="product_img">
-                <img src="assets/images/1448229.avif" alt="" />
-            </div>
-
-            <div class="product_img">
-                <img src="assets/images/454302.avif" alt="" />
-            </div>
-
-            <div class="product_img">
-                <img src="assets/images/1476152.avif" alt="" />
-            </div>
-
-            <div class="product_img">
-                <img src="assets/images/1530582.avif" alt="" />
-            </div>
-        </div>
-        <label for="ch">SEE MORE</label>
+        <label for="ch" onclick="LoadMore()">SEE MORE</label>
     </div>
 </div>
 </body>
