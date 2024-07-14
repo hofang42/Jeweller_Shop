@@ -39,29 +39,28 @@ function hideSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.style.display = "none";
 }
-/* When the user clicks on the button, 
-        toggle between hiding and showing the dropdown content */
-function toggleDropdown(dropdownId) {
-  var dropdowns = document.getElementsByClassName("dropdown-content");
-  for (var i = 0; i < dropdowns.length; i++) {
-    var openDropdown = dropdowns[i];
-    if (openDropdown.id !== dropdownId) {
-      openDropdown.classList.remove("show");
+
+let thumbnails = document.getElementsByClassName("product__detail-thumbnail");
+let activeImages = document.getElementsByClassName("active");
+
+for (var i = 0; i < thumbnails.length; i++) {
+  thumbnails[i].addEventListener("mouseover", function () {
+    if (activeImages.length > 0) {
+      activeImages[0].classList.remove("active");
     }
-  }
-  document.getElementById(dropdownId).classList.toggle("show");
+    this.classList.add("active");
+    document.getElementById("featured").src = this.src;
+  });
 }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function (event) {
-  if (!event.target.matches(".dropbtn")) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
-    }
-  }
-};
+let buttonRight = document.getElementById("slideRight");
+let buttonLeft = document.getElementById("slideLeft");
+let slider = document.querySelector(".product__detail-slider");
+
+buttonLeft.addEventListener("click", function () {
+  slider.scrollLeft -= 180;
+});
+
+buttonRight.addEventListener("click", function () {
+  slider.scrollLeft += 180;
+});
