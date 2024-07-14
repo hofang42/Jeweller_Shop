@@ -92,6 +92,8 @@ public class CartServlet extends HttpServlet {
                 request.setAttribute("cart", cList);
                 request.setAttribute("price", totalPrice);
             }
+            System.out.println("abc");
+            System.out.println(cList);
             List<Product_Category> pList = d.getAllCategoryNoParents();
             request.setAttribute("data", pList);
             request.getRequestDispatcher("cart.jsp").forward(request, response);
@@ -149,6 +151,8 @@ public class CartServlet extends HttpServlet {
                 request.setAttribute("data", pList);
                 request.setAttribute("price", totalPrice);
             }
+            System.out.println("abc");
+            System.out.println(cList);
             request.getRequestDispatcher("cart.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();

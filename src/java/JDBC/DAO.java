@@ -191,12 +191,12 @@ public class DAO extends DBContext {
                         rs.getString(7),
                         rs.getString(8),
                         rs.getString(9),
-                        rs.getString(10),
-                        rs.getInt(11),
+                        rs.getString(15),
+                        rs.getInt(10),
+                        rs.getString(11),
                         rs.getString(12),
-                        rs.getString(13),
-                        rs.getInt(14),
-                        rs.getInt(15));
+                        rs.getInt(13),
+                        rs.getInt(14));
             }
         } catch (SQLException e) {
             System.out.println(e.getCause());
@@ -268,19 +268,19 @@ public class DAO extends DBContext {
                         rs.getString(7),
                         rs.getString(8),
                         rs.getString(9),
-                        rs.getString(10),
-                        rs.getInt(11),
+                        rs.getString(15),
+                        rs.getInt(10),
+                        rs.getString(11),
                         rs.getString(12),
-                        rs.getString(13),
-                        rs.getInt(14),
-                        rs.getInt(15))
-                );
+                        rs.getInt(13),
+                        rs.getInt(14)));
 
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return pList;
+
     }
 
     public boolean Payment_insert(int user_id,
@@ -757,6 +757,8 @@ public class DAO extends DBContext {
 
     public static void main(String[] args) {
         DAO d = new DAO();
-        System.out.println(d.getCategoryIdByName("Necklaces"));
+        for (ProductDetail p : d.getAllProductDetails()) {
+            System.out.println(p);
+        }
     }
 }

@@ -5,6 +5,7 @@
 package Controller;
 
 import JDBC.DAO;
+import Model.FileInfo;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -21,6 +22,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -106,7 +108,7 @@ public class UploadServlet extends HttpServlet {
                 sale_price = convertEmptyToNull(request.getParameter("sale_price")),
                 product_category_id = convertEmptyToNull(request.getParameter("product_category_id")),
                 product_collection_id = convertEmptyToNull(request.getParameter("product_collection_id"));
-
+        String img_link = "";
         // Lấy phần file từ request
         response.getWriter().print(d.getCollectionIdByName(product_collection_id));
         Part filePart = request.getPart("image");
@@ -139,8 +141,23 @@ public class UploadServlet extends HttpServlet {
                 for (String extractedFileName : extractedFileNames) {
                     d.Product_Img_insert(extractedFileName, d.GetMaxProductId());
                     response.getWriter().println(extractedFileName);
+                    if (extractedFileName.endsWith(".avif")) {
+                        extractedFileName = extractedFileName.replaceAll(".avif", "");
+                        if (extractedFileName.equalsIgnoreCase(productName)) {
+                            img_link = extractedFileName;
+                            img_link += ".avif";
+                        }
+                    } else {
+                        extractedFileName = extractedFileName.replaceAll(".png", "");
+                        if (extractedFileName.equalsIgnoreCase(productName)) {
+                            img_link = extractedFileName;
+                            img_link += ".png";
+                        }
+                    }
+
+                    response.getWriter().println(img_link);
                 }
-                d.Update_Product_img(d.getOneProduct_img(d.GetMaxProductId()).getImg_link(), d.GetMaxProductId());
+                d.Update_Product_img(img_link, d.GetMaxProductId());
             } else {
                 response.getWriter().print("Please upload a ZIP file.");
             }
@@ -169,25 +186,34 @@ public class UploadServlet extends HttpServlet {
     }
 
     private List<String> unzipAndGetFileNames(String zipFilePath, String destDirectory) throws IOException {
-        List<String> fileNames = new ArrayList<>();
-
+        List<FileInfo> fileInfos = new ArrayList<>();
+        long max = 0;
         try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(zipFilePath))) {
             ZipEntry entry = zipIn.getNextEntry();
             while (entry != null) {
                 String filePath = destDirectory + File.separator + entry.getName();
 
                 if (!entry.isDirectory()) {
-                    String[] fileName = entry.getName().split("/");
                     extractFile(zipIn, filePath);
-                    fileNames.add(fileName[1]); // Thêm tên file vào danh sách
+                    File extractedFile = new File(filePath);
+                    fileInfos.add(new FileInfo(extractedFile.getName(), extractedFile.lastModified()));
                 } else {
                     File dir = new File(filePath);
-                    dir.mkdirs(); // Tạo thư mục nếu entry là một thư mục
+                    dir.mkdirs(); // Create directories if entry is a directory
                 }
 
                 zipIn.closeEntry();
                 entry = zipIn.getNextEntry();
             }
+        }
+
+        // Sort fileInfos by lastModified date
+        fileInfos.sort(Comparator.comparingLong(FileInfo::getLastModified));
+
+        // Collect sorted file names into a list
+        List<String> fileNames = new ArrayList<>();
+        for (FileInfo fileInfo : fileInfos) {
+            fileNames.add(fileInfo.getName());
         }
 
         return fileNames;

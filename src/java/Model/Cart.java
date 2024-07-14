@@ -4,6 +4,7 @@
  */
 package Model;
 
+import JDBC.DAO;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,6 +73,7 @@ public class Cart {
 
     public Cart(String txt, List<ProductDetail> list, List<ProductImg> img_list) {
         items = new ArrayList<>();
+        DAO d = new DAO();
         try {
             if (txt != null && txt.length() != 0) {
                 String[] s = txt.split("\\.");
@@ -99,5 +101,14 @@ public class Cart {
         ProductImg pm = getImgById(id, img_list);
         c = new CartItem(pm, p, quantity);
         addItem(c);
+    }
+    
+    public static void main(String[] args) {
+        DAO d = new DAO();
+        Cart cart = new Cart("1042:0.1069:0.1069:0.1069:0.1069:0.1069:0.1069:0.1069:0.1069:0.1069:0.1069:0.1069:0.1064:0.1064:0.1064:0.1064:0.1064:0.1064:0.1064:0.1064:0.1064:53.1064:0.1064:0.1064:0.1064:0.1064:0.1064:0.1064:0.1064:0.1064:0.1064:0.1064:0.1064:0.1064:0",
+        d.getAllProductDetails(), d.getAllProduct_img());
+        for (CartItem c : cart.getItems()) {
+            System.out.println(c);
+        }
     }
 }
